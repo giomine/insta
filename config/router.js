@@ -16,16 +16,16 @@ router.route('/posts/:id')
   .delete(secureRoute, deletedPost)
 
 router.route('/register')
-  .post(registerUser)
+  .post(secureRoute, registerUser)
 
 router.route('/login')
-  .post(loginUser)
+  .post(secureRoute, loginUser)
 
 router.route('/posts/:id/comments')
-  .post(addComment)
+  .post(secureRoute, addComment)
 
 router.route('/posts/:postId/comments/:commentId')
-  .delete(deleteComment)
+  .delete(secureRoute, deleteComment)
 
 router.route('/profile')
   .get(secureRoute, profileView)
