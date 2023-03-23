@@ -1,6 +1,7 @@
 import express from 'express'
 const router = express.Router()
 import { getPosts, getSinglePost, createPost, editPost, deletedPost } from '../controllers/posts.js'
+import { profileView } from '../controllers/users.js'
 
 
 router.route('/posts')
@@ -25,7 +26,7 @@ router.route('/posts/:postId/reviews/:reviewId')
 // .delete(deleteReview)
 
 router.route('/profile')
-// .get(profileView)
+  .get(profileView)
 
 export default router
 
