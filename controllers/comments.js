@@ -7,10 +7,10 @@ export const addComment = async (req, res) => {
     const { id } = req.params
     const post = await Post.findById(id)
     if (!post) throw new NotFound('Post not found :(')
-    // const commentToAdd = { ...req.body, owner: req.loggedInUser._id }
+    const commentToAdd = { ...req.body, owner: req.loggedInUser._id }
     console.log('POST', post)
     // console.log('COMMENT', commentToAdd)
-    // post.comments.push(commentToAdd)
+    post.comments.push(commentToAdd)
     await post.save()
     return res.status(201).json(post)
   } catch (err) {

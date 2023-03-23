@@ -7,11 +7,24 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
 })
 
+userSchema.virtual('posts', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'owner',
+})
+
 userSchema
   .virtual('passwordConfirmation')
   .set(function(userPasswordConfirmation){
     this._passwordConfirmation = userPasswordConfirmation
   })
+
+userSchema.set('toJSON', {
+  virtuals: true,
+  transform: function(doc,ret){
+    delete ret.password
+  },
+})
 
 userSchema.pre('validate', function(next){
   if (this.password !== this._passwordConfirmation){
@@ -27,5 +40,9 @@ userSchema.pre('save', function(next){
   }
   next()
 })
+
+userSchema.methods.validatePassword = function(plainTextPassword){
+  return bcrypt.compare(plainTextPassword, this.password)
+}
 
 export default mongoose.model('User', userSchema)

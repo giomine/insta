@@ -16,10 +16,10 @@ router.route('/posts/:id')
   .delete(secureRoute, deletedPost)
 
 router.route('/register')
-  .post(secureRoute, registerUser)
+  .post(registerUser)
 
 router.route('/login')
-  .post(secureRoute, loginUser)
+  .post(loginUser)
 
 router.route('/posts/:id/comments')
   .post(secureRoute, addComment)

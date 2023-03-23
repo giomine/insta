@@ -8,8 +8,8 @@ import { NotFound, sendError, Unauthorized } from '../config/errors.js'
 
 export const getPosts = async (req, res) => {
   try {
-    const posts = await Post.find()
-    // const posts = await Post.find().populate('owner')
+    // const posts = await Post.find()
+    const posts = await Post.find().populate('owner')
     return res.json(posts)
   } catch (err) {
     return sendError(err, res)
@@ -24,8 +24,8 @@ export const getPosts = async (req, res) => {
 export const getSinglePost = async (req, res) => {
   try {
     const { id } = req.params
-    const post = await Post.findById(id)
-    // const post = await Post.findById(id).populate('owner').populate('comments.owner')
+    // const post = await Post.findById(id)
+    const post = await Post.findById(id).populate('owner').populate('comments.owner')
     if (!post) throw new NotFound('Post not found')
     return res.json(post)
   } catch (err) {
@@ -41,7 +41,7 @@ export const getSinglePost = async (req, res) => {
 
 export const createPost = async (req, res) => {
   try {
-    // req.body.owner = req.loggedInUser._id
+    req.body.owner = req.loggedInUser._id
     const createdPost = await Post.create(req.body)
     return res.status(201).json(createdPost)
   } catch (err) {
@@ -58,16 +58,16 @@ export const editPost = async (req, res) => {
     const { id } = req.params
     const postToEdit = await Post.findById(id)
     if (!postToEdit) throw new NotFound('Post not found')
-    // if (!postToEdit.owner.equals(req.loggedInUser._id)){
-    //   throw new Error('Unauthorized')
-    // }
+    if (!postToEdit.owner.equals(req.loggedInUser._id)){
+      throw new Error('Unauthorized')
+    }
     Object.assign(postToEdit, req.body)
     await postToEdit.save()
     return res.json(postToEdit)
   } catch (err) {
     console.log(err)
-    return sendError(err, res)
-    // return res.json({ message: `Gah, errors! ${err}` })
+    // return sendError(err, res)
+    return res.json({ message: `Gah, errors! ${err}` })
   }
 }
 
