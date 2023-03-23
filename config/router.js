@@ -1,8 +1,8 @@
 import express from 'express'
 const router = express.Router()
 import { getPosts, getSinglePost, createPost, editPost, deletedPost } from '../controllers/posts.js'
+import { profileView } from '../controllers/users.js'
 import { addComment, deleteComment } from '../controllers/comments.js'
-
 
 router.route('/posts')
   .get(getPosts)
@@ -26,7 +26,7 @@ router.route('/posts/:postId/comments/:commentId')
   .delete(deleteComment)
 
 router.route('/profile')
-// .get(profileView)
+  .get(profileView)
 
 export default router
 
