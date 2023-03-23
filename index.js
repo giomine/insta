@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-// import router from './config/router.js'
+import router from './config/router.js'
 import 'dotenv/config'
 
 const app = express()
@@ -19,9 +19,10 @@ const startServer = async () => {
 
     // When routes are ready, this will be replaced with:
     // app.use('/api', router)
-    app.get('/insta', (req, res) => {
-      return res.json({ message: 'Welcome to home page :)' })
-    })
+    app.use(router)
+    // app.get('/insta', (req, res) => {
+    //   return res.json({ message: 'Welcome to home page :)' })
+    // })
 
     app.use((req, res) => {
       return res.status(404).json({ message: 'Route not found' })
