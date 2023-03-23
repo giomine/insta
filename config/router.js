@@ -1,6 +1,7 @@
 import express from 'express'
 const router = express.Router()
 import { getPosts, getSinglePost, createPost, editPost, deletedPost } from '../controllers/posts.js'
+import { addComment, deleteComment } from '../controllers/comments.js'
 
 
 router.route('/posts')
@@ -18,11 +19,11 @@ router.route('/register')
 router.route('/login')
 // .post(loginUser)
 
-router.route('/posts/:id/reviews')
-// .post(addReview)
+router.route('/posts/:id/comments')
+  .post(addComment)
 
-router.route('/posts/:postId/reviews/:reviewId')
-// .delete(deleteReview)
+router.route('/posts/:postId/comments/:commentId')
+  .delete(deleteComment)
 
 router.route('/profile')
 // .get(profileView)
