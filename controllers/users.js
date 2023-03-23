@@ -1,11 +1,10 @@
-// import {  } from '../config/errors.js'
+import { NotFound, sendError, Unauthorized } from '../config/errors.js'
 
 export const profileView = async (req, res) => {
   try {
     const profile = await req.loggedInUser.populate('posts')
     return res.json(profile)
   } catch (err) {
-    return res.json({ message: `Eek, error! ${err}` })
-    // return sendError(err, res)
+    return sendError(err, res)
   }
 }
