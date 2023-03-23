@@ -18,7 +18,7 @@ const startServer = async () => {
     })
 
     // When routes are ready, this will be replaced with:
-    // app.use('/api', router)
+    app.use('/api', router)
     app.use(router)
     // app.get('/insta', (req, res) => {
     //   return res.json({ message: 'Welcome to home page :)' })
