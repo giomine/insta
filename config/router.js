@@ -4,7 +4,7 @@ import { getPosts, getSinglePost, createPost, editPost, deletedPost } from '../c
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
 import { profileView } from '../controllers/users.js'
-
+import { addComment, deleteComment } from '../controllers/comments.js'
 
 router.route('/posts')
   .get(getPosts)
@@ -21,11 +21,11 @@ router.route('/register')
 router.route('/login')
   .post(loginUser)
 
-router.route('/posts/:id/reviews')
-// .post(secureRoute, addReview)
+router.route('/posts/:id/comments')
+  .post(addComment)
 
-router.route('/posts/:postId/reviews/:reviewId')
-// .delete(secureRoute, deleteReview)
+router.route('/posts/:postId/comments/:commentId')
+  .delete(deleteComment)
 
 router.route('/profile')
   .get(secureRoute, profileView)
