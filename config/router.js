@@ -1,14 +1,16 @@
 import express from 'express'
 const router = express.Router()
+import { getPosts, getSinglePost, createPost, editPost, deletedPost } from '../controllers/posts.js'
+
 
 router.route('/posts')
-// .get(getPosts)
-// .post(createPost)
+  .get(getPosts)
+  .post(createPost)
 
 router.route('/posts/:id')
-// .get(getSinglePost)
-// .put(editPost)
-// .delete(deletePost)
+  .get(getSinglePost)
+  .put(editPost)
+  .delete(deletedPost)
 
 router.route('/register')
 // .post(registerUser)

@@ -7,7 +7,8 @@ import Post from '../models/posts.js'
 
 export const getPosts = async (req, res) => {
   try {
-    const posts = await Post.find().populate('owner')
+    const posts = await Post.find()
+    // const posts = await Post.find().populate('owner')
     return res.json(posts)
   } catch (error) {
     return res.json({ message: `Gah, errors! ${error}` })
@@ -21,7 +22,8 @@ export const getPosts = async (req, res) => {
 export const getSinglePost = async (req, res) => {
   try {
     const { id } = req.params
-    const post = await Post.findById(id).populate('owner').populate('comments.owner')
+    const post = await Post.findById(id)
+    // const post = await Post.findById(id).populate('owner').populate('comments.owner')
     if (!post) throw new Error('Post not found')
     return res.json(post)
   } catch (error) {
@@ -36,7 +38,7 @@ export const getSinglePost = async (req, res) => {
 
 export const createPost = async (req, res) => {
   try {
-    req.body.owner = req.loggedInUser._id
+    // req.body.owner = req.loggedInUser._id
     const createdPost = await Post.create(req.body)
     return res.status(201).json(createdPost)
   } catch (err) {
@@ -73,7 +75,7 @@ export const deletedPost = async (req, res) => {
     const { id } = req.params
     const deletedPost = await Post.findByIdAndDelete(id)
     if (!deletedPost) throw new Error('Post not found')
-    return res.sendstatus(204)
+    return res.sendStatus(204)
   } catch (error) {
     return res.json({ message: `Gah, errors! ${error}` })
     // return sendError(error, res)
