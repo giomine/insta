@@ -1,5 +1,6 @@
 @import './global/variables.scss';
 @import './home.scss';
+@import './createPost.scss';
 
 * {
   box-sizing: border-box;
@@ -16,8 +17,8 @@ h4{
   margin: 0;
 }
 
-// .container{
-//   width: 90vw;
-//   @include flex-center();
-//   flex-direction: column;
-// }
+.container{
+  width: 90vw;
+  @include flex-center();
+  flex-direction: column;
+}

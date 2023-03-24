@@ -1,0 +1,32 @@
+@import './global//variables.scss';
+
+.form-container{
+  height: 80vh;
+  @include flex-center();
+
+  .form-border{
+    width: 90vw;
+    height: 50vh;
+    border: $border;
+    @include flex-center();
+    flex-direction: column;
+    
+    form {
+      @include flex-center();
+      flex-direction: column;
+      height: 50%;
+      
+      input{
+        @include inputs();
+      }
+
+      button{
+        @include buttons();
+      }
+      
+    }
+    @media(min-width: 600px){
+      width: 50vw;
+    }
+  }
+}
