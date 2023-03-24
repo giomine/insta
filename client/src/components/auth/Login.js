@@ -15,6 +15,7 @@ const Login = () => {
     password: '',
   })
 
+
   const handleChange = (e) => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
     console.log(e.target.value)
@@ -37,7 +38,7 @@ const Login = () => {
       <Container>
         <Row>
           <Col as="form" onSubmit={handleSubmit}>
-            <h1>Login</h1>
+            <h1 className='display-6 text-center'>Login</h1>
             <label htmlFor="email">email</label>
             <input type="email" name="email" placeholder="enter you email here" onChange={handleChange} value={formFields.email} />
             <label htmlFor="password">password</label>
