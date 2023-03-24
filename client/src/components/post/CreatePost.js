@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ImageUploadField from './ImageUploadField'
 
 
 
@@ -28,8 +29,13 @@ const CreatePost = () => {
           <label htmlFor="caption"></label>
           <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
           
-          <label htmlFor="image"></label>
-          <input type="text" name="image" placeholder="image upload will go here" value={formFields.image} onChange={handleChange} />
+          {/* <label htmlFor="image"></label>
+          <input type="text" name="image" placeholder="image upload will go here" value={formFields.image} onChange={handleChange} /> */}
+
+          < ImageUploadField
+            setFormFields={setFormFields}
+            formFields={formFields}
+          />
           
           <button type="submit">Post</button>
         </form>
