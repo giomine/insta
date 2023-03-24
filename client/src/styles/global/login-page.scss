@@ -1,0 +1,15 @@
+.login-page {
+  form {
+    background-color: $white;
+    padding: 50px;
+    label{
+      display: flex;
+    }
+    input {
+      // width: $desktopInputWidth;
+      margin-bottom: 5px;
+      border: $border;
+      padding: 5px;
+    }
+  }
+}

@@ -1,5 +1,26 @@
-@import './components/navbar';
+@import './global/variables.scss';
+@import './home.scss';
+@import './global/login-page.scss';
+@import './createPost.scss';
+@import './global/register.scss';
 
 * {
   box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  @include flex-center();
+  align-items: flex-start;
+}
+
+h4{
+  margin: 0;
+}
+
+.container{
+  width: 90vw;
+  @include flex-center();
+  flex-direction: column;
 }

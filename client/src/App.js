@@ -21,12 +21,12 @@ import PageNotFound from './components/common/PageNotFound.js'
 // import Spinner from './components/common/Spinner.js'
 
 const App = () => {
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get('/api/posts/')
-    }
-    getData()
-  })
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const { data } = await axios.get('/api/posts/')
+  //   }
+  //   getData()
+  // })
 
   return (
     <div className='container'>
