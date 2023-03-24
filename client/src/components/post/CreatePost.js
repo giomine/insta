@@ -22,8 +22,8 @@ const CreatePost = () => {
   return (
     <div className='form-container'>
       <div className="form-border">
-        <h1>Create Post Page</h1>
         <form action="" onSubmit={handleSubmit}>
+          <h1>Create Post Page</h1>
 
           <label htmlFor="caption"></label>
           <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
