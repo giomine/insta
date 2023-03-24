@@ -13,6 +13,12 @@ $desktopContainerWidth: 500px;
 $mobileContainerWidth: 90vw;
 $desktopSinglePostContainer: 100px;
 $mobileSinglePostContainer: 100px;
+@mixin flex-center(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin imageSize(){
   height: 300px;
   width: 300px;
@@ -25,3 +31,4 @@ $mobileSinglePostContainer: 100px;
   border: $border; 
   border-radius: 50%;
 }
+

@@ -21,7 +21,9 @@ const seedDatabase = async() => {
     const createdUsers = await User.create(userData)
 
     const postsWithOwner = postData.map(post => {
-      return { ...post, owner: createdUsers[0]._id }
+      const randomUser = createdUsers[Math.floor(Math.random() * createdUsers.length)]
+      return { ...post, owner: randomUser._id }
+      // return { ...post, owner: createdUsers[0]._id }
     })
 
     const createdPosts = await Post.create(postsWithOwner)
