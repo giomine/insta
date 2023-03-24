@@ -14,11 +14,12 @@ const Login = () => {
     email: '',
     password: '',
   })
+  const [error, setError] = useState('')
 
 
   const handleChange = (e) => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
-    console.log(e.target.value)
+    setError('')
   }
 
   const handleSubmit = async (e) => {
@@ -26,27 +27,32 @@ const Login = () => {
     try {
       const response = await axios.post('/api/login', formFields)
       localStorage.setItem('My Token', response.data.token)
-      console.log(response.data.token)
+      // setToken('My Token', response.data.token)
       navigate('/')
     } catch (err) {
       console.log(err)
+      setError(err.response.data.message)
     }
   }
 
   return (
     <main className="login-page">
-      <Container>
-        <Row>
-          <Col as="form" onSubmit={handleSubmit}>
-            <h1 className='display-6 text-center'>Login</h1>
-            <label htmlFor="email">email</label>
-            <input type="email" name="email" placeholder="enter you email here" onChange={handleChange} value={formFields.email} />
-            <label htmlFor="password">password</label>
-            <input type="password" name="password" placeholder="enter you password here" onChange={handleChange} value={formFields.password} />
-            <button>Login</button>
-          </Col>
-        </Row>
-      </Container>
+      <div className="login-border">
+        <Container>
+          <Row>
+            <Col as="form" onSubmit={handleSubmit}>
+              <h1 className='display-6 text-center'>Login</h1>
+              <label htmlFor="email">email</label>
+              <input type="email" name="email" placeholder="enter you email here" onChange={handleChange} value={formFields.email} />
+              <label htmlFor="password">password</label>
+              <input type="password" name="password" placeholder="enter you password here" onChange={handleChange} value={formFields.password} />
+              <button>Login</button>
+              {error && <p className='text-center'>{error}</p>}
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
 
 
     </main>
