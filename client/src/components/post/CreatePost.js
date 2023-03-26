@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ImageUploadField from './ImageUploadField'
-
+import axios from 'axios'
+import { getToken } from '../../helpers/auth'
 
 
 const CreatePost = () => {
@@ -15,9 +16,20 @@ const CreatePost = () => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(formFields)
+    try {
+      console.log(formFields)
+      console.log('new response')
+      const response = await axios.post('/api/posts', formFields, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      console.log(response)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (

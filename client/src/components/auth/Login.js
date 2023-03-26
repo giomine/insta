@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault()
     try {
       const response = await axios.post('/api/login', formFields)
-      localStorage.setItem('My Token', response.data.token)
+      localStorage.setItem('user-token', response.data.token)
       // setToken('My Token', response.data.token)
       navigate('/')
     } catch (err) {
