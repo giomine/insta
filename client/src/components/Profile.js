@@ -53,16 +53,16 @@ const Profile = () => {
                 const { _id, caption, image, owner } = post
                 // console.log(_id, caption, image, owner.username)
                 return (
-                  <div className='post-card' key={_id}>
-                    <div className='username'><h4>{userInfo.username}</h4></div>
-                    <div className='post-image' style={{ backgroundImage: `url('${image}')` }}></div>
-                    <div className='caption'>{caption}</div>
-                  </div>
+                  <DisplayPosts 
+                    key={_id}
+                    username={userInfo.username}
+                    image={image}
+                    caption={caption}
+                  />
                 )
               })
               : <>Error</> 
             }
-            {/* <DisplayPosts /> */}
           </div>
         </>
         : 'Please log in!'
