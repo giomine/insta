@@ -11,9 +11,9 @@
     justify-content: flex-start;
   }
   .post-card, .post-image{
-    width: 33vw;
-    height: 33vw;
-    margin: 0;
+    width: 32vw;
+    height: 32vw;
+    margin: 0 1px 1px;
     border: none;
   }
   .caption, .username{
@@ -28,7 +28,7 @@
     .post-card, .post-image{
       width: 28vw;
       height: 28vw;
-      margin: 2px;
+      margin: 0 2px 2px;
       max-width: 345px;
       max-height: 345px;
     }
