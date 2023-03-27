@@ -32,14 +32,20 @@ export const handleLogout = (navigate) => {
   navigate('/login')
 }
 
-//* To uncomment the code below, in case we need it later for post editing
+export const setHeaders = () => {
+  return {
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+    },
+  }
+}
 
 // check if the token payload "sub" matches the post's "addedBy._id"
 
-// export const userIsOwner  = (post) => {
-//   const payload = getPayload()
-//   if (!payload) return
-//   if (post){
-//     return payload.sub === post.addedBy._id
-//   }
-// }
+export const userIsOwner  = (post) => {
+  const payload = getPayload()
+  if (!payload) return
+  if (post){
+    return payload.sub === post.addedBy._id
+  }
+}

@@ -29,6 +29,7 @@ const PageNavbar = () => {
               <>
                 <Nav.Link to="/profile" as={Link}> Profile </Nav.Link>
                 <span className='nav-link' onClick = {() => handleLogout(navigate)}>Logout</span>
+                
               </>
               :
               <>
