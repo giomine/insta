@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
 
+  const navigate = useNavigate()
+
   const [formFields, setFormFields] = useState({
     username: '',
     email: '',
@@ -20,10 +22,10 @@ const Register = () => {
     e.preventDefault()
     try {
       console.log(formFields)
-      // const response = await axios.post('/api/login', formFields)
-      // localStorage.setItem('user-token', response.data.token)
-      // console.log(response.data.token)
-      // navigate('/')
+      const response = await axios.post('/api/register', formFields)
+      localStorage.setItem('user-token', response.data.token)
+      console.log(response.data.token)
+      navigate('/login')
     } catch (err) {
       console.log(err)
     }
