@@ -3,7 +3,7 @@ import { setHeaders } from '../../helpers/auth'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-import { isAuthenticated, userIsOnwer } from '../../helpers/auth'
+import { isAuthenticated, userIsOwner } from '../../helpers/auth'
 
 const EditPost = () => {
 
@@ -23,7 +23,7 @@ const EditPost = () => {
   //!On Mount
   useEffect(() => {
 
-    (!isAuthenticated() || !userIsOnwer() && navigate(`/api/posts/${postId}`))
+    (!isAuthenticated() || !userIsOwner() && navigate(`/api/posts/${postId}`))
 
     const getPost = async () => {
       try {
