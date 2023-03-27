@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { isAuthenticated } from '../../helpers/auth'
+import { useNavigate } from 'react-router-dom'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -11,6 +12,8 @@ import Col from 'react-bootstrap/Col'
 const SinglePost = () => {
 
   const [post, setPost] = useState(null)
+
+  const navigate = useNavigate()
 
   const { id } = useParams()
   console.log('Params ---->', id)
@@ -23,10 +26,14 @@ const SinglePost = () => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
   }
 
+  const handleClick = () => {
+    navigate(`/posts/${id}/edit`)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.get(`/api/posts/${id}`)
+      const { data } = await axios.post(`/posts/${id}`)
     } catch (err) {
       console.log(err)
     }
@@ -69,6 +76,9 @@ const SinglePost = () => {
         <input type="text" name="comment" placeholder="enter a comment here" onChange={handleChange} value={formFields.comment} />
         <button>submit</button>
       </Col>
+      {/* <Link to={`/posts/${id}/edit`}> */}
+      <button type ="button" id="edit" onClick={handleClick}>edit</button>
+      {/* </Link> */}
 
     </main>
 

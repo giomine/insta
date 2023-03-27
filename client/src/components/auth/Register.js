@@ -24,9 +24,9 @@ const Register = () => {
     e.preventDefault()
     try {
       console.log(formFields)
-      const response = await axios.post('/api/register', formFields)
-      localStorage.setItem('user-token', response.data.token)
-      console.log(response.data.token)
+      await axios.post('/api/register', formFields)
+      // localStorage.setItem('user-token', response.data.token)
+      // console.log(response.data.token)
       navigate('/login')
     } catch (err) {
       console.log(err)

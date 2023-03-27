@@ -39,7 +39,7 @@ const App = () => {
           <Route path="/posts/:id" element={<SinglePost />} />
           <Route path="/posts/:id" element={<DeletePost />} />
           {/* <Route path="/posts" element={<DisplayPosts />} /> */}
-          <Route path="/posts/:id" element={<EditPost />} />
+          <Route path="/posts/:id/edit" element={<EditPost />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

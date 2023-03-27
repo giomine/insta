@@ -54,9 +54,6 @@ const Login = () => {
           </Row>
         </Container>
       </div>
-
-
-
     </main>
   )
 }
