@@ -56,9 +56,8 @@ const Profile = () => {
                     const { _id, caption, image, owner } = post
                     // console.log(_id, caption, image, owner.username)
                     return (
-                      <Link key={_id} to={`/api/posts/${_id}`}>
+                      <Link key={_id} to={`/posts/${_id}`}>
                         <DisplayPosts 
-                          key={_id}
                           _id={_id}
                           // username={userInfo.username}
                           image={image}
