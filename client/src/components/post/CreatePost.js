@@ -2,9 +2,12 @@ import { useState } from 'react'
 import ImageUploadField from './ImageUploadField'
 import axios from 'axios'
 import { getToken } from '../../helpers/auth'
+import { useNavigate } from 'react-router-dom'
 
 
 const CreatePost = () => {
+
+  const navigate = useNavigate()
 
   const [ formFields, setFormFields ] = useState({
     caption: '',
@@ -27,6 +30,7 @@ const CreatePost = () => {
         },
       })
       console.log(response)
+      navigate('/')
     } catch (err) {
       console.log(err)
     }
