@@ -6,6 +6,8 @@ const Register = () => {
 
   const navigate = useNavigate()
 
+  const [ error, setError ] = useState('')
+
   const [formFields, setFormFields] = useState({
     username: '',
     email: '',
@@ -28,6 +30,7 @@ const Register = () => {
       navigate('/login')
     } catch (err) {
       console.log(err)
+      setError('Please fill all fields and if you already have an account log in instead')
     }
   }
 
@@ -47,6 +50,7 @@ const Register = () => {
           <label htmlFor="passwordConfirmation"></label>
           <input type="password" name="passwordConfirmation" placeholder='confirm password' onChange={handleChange} value={formFields.passwordConfirmation} />
           <button>Register</button>
+          { error ? <p>{error}</p> : '' }
         </form>
       </div>
     </div>
