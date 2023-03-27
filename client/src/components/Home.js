@@ -1,6 +1,7 @@
 import DisplayPosts from './post/DisplayPosts.js'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -29,13 +30,15 @@ const Home = () => {
             const { _id, caption, image, owner } = post
             // console.log(_id, caption, image, owner.username)
             return (
-              <DisplayPosts 
-                key={_id}
-                _id={_id}
-                username={owner.username}
-                image={image}
-                caption={caption}
-              />
+              <Link key={_id} to={`/posts/${_id}`}>
+                <DisplayPosts 
+                  // key={_id}
+                  _id={_id}
+                  username={owner.username}
+                  image={image}
+                  caption={caption}
+                />
+              </Link>
             )
           })
           : <>Error</> 
