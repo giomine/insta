@@ -1,42 +1,81 @@
 @import '../global/variables.scss';
 
-.profile-top{
-  width: 100vw;
-  border-bottom: 1px solid rgb(177, 174, 174);
-  padding: 40px 15px;
-  margin-bottom: 30px;
-  @include flex-center();
-  justify-content: space-between;
 
-  .profile-picture{
-    height: 100px;
-    width: 100px;
-    background-color: rgb(177, 174, 174);
-    border-radius: 50%;
-    margin-right: 20px;
+.profilepage{
+  .photo-center{
+    @include flex-center();
+  }
+  .photos-wrapper{
+    @include flex-center();
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .post-card, .post-image{
+    width: 33vw;
+    height: 33vw;
+    margin: 0;
+    border: none;
+  }
+  .caption, .username{
+    height: 0;
+    padding: 0;
+  }
+  @media (min-width: 660px){
+    .photos-wrapper{
+      width: 90vw;
+      max-width: 1050px;
+    }
+    .post-card, .post-image{
+      width: 30vw;
+      height: 30vw;
+      margin: 0;
+      max-width: 350px;
+      max-height: 350px;
+    }
+    .caption{
+      padding: 0;
+    }
   }
 
-  .profile-right{
-    width: 60%;
-    text-align: right;
 
-    .username{
-      font-weight: bold;
-    }
+  .profile-top{
+    width: 100vw;
+    border-bottom: 1px solid rgb(177, 174, 174);
+    padding: 40px 15px;
+    margin-bottom: 30px;
+    @include flex-center();
+    justify-content: space-between;
 
-    button{
-      @include buttons();
-      padding: 5px;
-    }
-  }
-
-  @media(min-width: 1250px){
     .profile-picture{
-      height: 150px;
-      width: 150px;
+      height: 100px;
+      width: 100px;
+      background-color: rgb(177, 174, 174);
+      border-radius: 50%;
+      margin-right: 20px;
     }
+
     .profile-right{
-      width: 55%;
+      width: 60%;
+      text-align: right;
+
+      .profile-username{
+        font-weight: bold;
+      }
+
+      button{
+        @include buttons();
+        padding: 5px;
+      }
+    }
+
+    @media(min-width: 1250px){
+      .profile-picture{
+        height: 150px;
+        width: 150px;
+      }
+      .profile-right{
+        width: 55%;
+      }
     }
   }
 }
