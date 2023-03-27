@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
 
+  const navigate = useNavigate()
+
+  const [ error, setError ] = useState('')
+
   const [formFields, setFormFields] = useState({
     username: '',
     email: '',
@@ -20,12 +24,13 @@ const Register = () => {
     e.preventDefault()
     try {
       console.log(formFields)
-      // const response = await axios.post('/api/login', formFields)
-      // localStorage.setItem('My Token', response.data.token)
-      // console.log(response.data.token)
-      // navigate('/')
+      const response = await axios.post('/api/register', formFields)
+      localStorage.setItem('user-token', response.data.token)
+      console.log(response.data.token)
+      navigate('/login')
     } catch (err) {
       console.log(err)
+      setError('Please fill all fields and if you already have an account log in instead')
     }
   }
 
@@ -45,6 +50,7 @@ const Register = () => {
           <label htmlFor="passwordConfirmation"></label>
           <input type="password" name="passwordConfirmation" placeholder='confirm password' onChange={handleChange} value={formFields.passwordConfirmation} />
           <button>Register</button>
+          { error ? <p>{error}</p> : '' }
         </form>
       </div>
     </div>
