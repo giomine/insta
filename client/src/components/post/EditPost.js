@@ -9,7 +9,7 @@ const EditPost = () => {
 
   //!Location variables
   const navigate = useNavigate()
-  const { postId } = useParams()
+  const { id } = useParams()
 
   //!State
   const [ formFields, setFormFields] = useState({
@@ -23,18 +23,18 @@ const EditPost = () => {
   //!On Mount
   useEffect(() => {
 
-    (!isAuthenticated() || !userIsOwner() && navigate(`/api/posts/${postId}`))
+    (!isAuthenticated() || !userIsOwner() && navigate(`/api/posts/${id}`))
 
     const getPost = async () => {
       try {
-        const { data } = await axios.get(`/api/posts/${postId}`)
+        const { data } = await axios.get(`/api/posts/${id}`)
         setFormFields(data)
       } catch (error) {
         console.log(error)
       }
     }
     getPost()
-  }, [postId, navigate])
+  }, [id, navigate])
 
   //!Execution
 
@@ -42,9 +42,9 @@ const EditPost = () => {
     event.preventDefault()
     console.log('Changes submitted!')
     try {
-      const { data } = await axios.put(`/api/posts/${postId}`, formFields, setHeaders())
+      const { data } = await axios.put(`/api/posts/${id}`, formFields, setHeaders())
       console.log('Response Data --> ', data)
-      navigate(`/api/posts/${postId}`)
+      navigate(`/api/posts/${id}`)
     } catch (error) {
       console.log(error)
     }
