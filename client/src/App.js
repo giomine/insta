@@ -36,10 +36,11 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/posts" element={<CreatePost />} />
+          <Route path="/posts/:id" element={<SinglePost />} />
           <Route path="/posts/:id" element={<DeletePost />} />
           {/* <Route path="/posts" element={<DisplayPosts />} /> */}
           <Route path="/posts/:id" element={<EditPost />} />
-          <Route path="/posts/:id" element={<SinglePost />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<PageNotFound />} />
