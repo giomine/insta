@@ -9,10 +9,12 @@
     @include flex-center();
     flex-wrap: wrap;
     justify-content: flex-start;
+    // width: 98vw; // might need these for centering
+    // margin: 0 auto;
   }
   .post-card, .post-image{
-    width: 32vw;
-    height: 32vw;
+    width: 32.7vw;
+    height: 32.7vw;
     margin: 0 1px 1px;
     border: none;
   }
