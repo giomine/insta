@@ -4,14 +4,10 @@ import { useNavigate } from 'react-router-dom'
 const tokenName = 'user-token'
 
 //get the token from local storage
-export const getToken = () => {
-  return localStorage.getItem(tokenName)
-}
+export const getToken = () => localStorage.getItem(tokenName)
 
 //set the token in local storage
-export const setToken = (token) => {
-  localStorage.setItem(tokenName, token)
-}
+export const setToken = (token) => localStorage.setItem(tokenName, token)
 
 // decode the payload
 export const getPayload = () => {
@@ -24,10 +20,10 @@ export const getPayload = () => {
 
 // check the expiration time
 export const isAuthenticated = () => {
-  const payload = getPayload(tokenName)
+  const payload = getPayload()
   if (!payload) return false
   const timeNow = Date.now() / 1000
-  return payload.exp > timeNow
+  return (payload.exp > timeNow) ? true : false
 }
 
 // remove the token from local storage and navigate to /login

@@ -6,6 +6,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import { setToken } from '../../helpers/auth'
+
 const Login = () => {
 
   const navigate = useNavigate()
@@ -26,8 +28,8 @@ const Login = () => {
     e.preventDefault()
     try {
       const response = await axios.post('/api/login', formFields)
-      localStorage.setItem('user-token', response.data.token)
-      // setToken('My Token', response.data.token)
+      // localStorage.setItem('user-token', response.data.token)
+      setToken(response.data.token)
       navigate('/')
     } catch (err) {
       console.log(err)
