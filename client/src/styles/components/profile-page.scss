@@ -1,0 +1,42 @@
+@import '../global/variables.scss';
+
+.profile-top{
+  width: 100vw;
+  border-bottom: 1px solid rgb(177, 174, 174);
+  padding: 40px 15px;
+  margin-bottom: 30px;
+  @include flex-center();
+  justify-content: space-between;
+
+  .profile-picture{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(177, 174, 174);
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  .profile-right{
+    width: 60%;
+    text-align: right;
+
+    .username{
+      font-weight: bold;
+    }
+
+    button{
+      @include buttons();
+      padding: 5px;
+    }
+  }
+
+  @media(min-width: 1250px){
+    .profile-picture{
+      height: 150px;
+      width: 150px;
+    }
+    .profile-right{
+      width: 55%;
+    }
+  }
+}
