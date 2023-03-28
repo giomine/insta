@@ -1,85 +1,98 @@
 import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { isAuthenticated } from '../../helpers/auth'
+import { isAuthenticated, getToken } from '../../helpers/auth'
 import { useNavigate } from 'react-router-dom'
-
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import DisplayPosts from './DisplayPosts'
 
 
 const SinglePost = () => {
 
-  const [post, setPost] = useState(null)
-
-  const navigate = useNavigate()
-
+  // const navigate = useNavigate()
   const { id } = useParams()
-  console.log('Params ---->', id)
+  
+  const [posts, setPosts] = useState(null)
 
   const [formFields, setFormFields] = useState({
-    comment: '',
+    text: '',
+    // owner: 'anon',
   })
 
   const handleChange = (e) => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
-  }
-
-  const handleClick = () => {
-    navigate(`/posts/${id}/edit`)
+    console.log(formFields)
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.post(`/posts/${id}`)
+      await axios.post(`/api/posts/${id}/comments`, formFields, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
     } catch (err) {
       console.log(err)
     }
   }
-
+  
   useEffect(() => {
     const getPost = async () => {
       try {
         const { data } = await axios.get(`/api/posts/${id}`)
-        console.log('data', data)
-        setPost(data)
+        console.log(data)
+        setPosts(data)
       } catch (err) {
         console.log(err)
       }
     }
     getPost()
-  }, [])
+  }, [formFields])
 
   return (
-    <main className='single-post-page'>
-      <Container>
-        <Row>
-          {post &&
-            <>
-              <Col>
-                <img src={post.image} alt={post.caption} />
-              </Col>
-              <Col>
-                <h2>{post.owner.username}</h2>
-                <h2>{post.caption}</h2>
-                <h2>{post.comments}</h2>
-              </Col>
-            </>
-          }
-        </Row>
-      </Container>
-      <h1>Single Post Page</h1>
-      <Col as="form" onSubmit={handleSubmit}>
-        <label htmlFor="comment">Comment</label>
-        <input type="text" name="comment" placeholder="enter a comment here" onChange={handleChange} value={formFields.comment} />
-        <button>submit</button>
-      </Col>
-      {/* <Link to={`/posts/${id}/edit`}> */}
-      <button type ="button" id="edit" onClick={handleClick}>edit</button>
-      {/* </Link> */}
+    <main className='homepage single-post-page'>
+      {posts ? 
+        <div className='direction'>
+          <div className='block1'>
+            <DisplayPosts 
+              id={posts.id}
+              image={posts.image}
+            />
+          </div>
+    
+          <div className='block2'>
+            <div className='block2-top'>
+              <div>{posts.owner.username}</div>
+              <div>{posts.caption}</div>
+            </div>
 
+            <div className='block2-mid'>
+              <h5>Comments</h5>
+              {posts.comments.map(comment => {
+                const { text, owner, createdAt } = comment
+                // console.log(owner.username, text, createdAt)
+                return (
+                  <div key={posts.id} className='comment'>
+                    <div>{owner.username}</div>
+                    <div>{text}</div>
+                    <div>{createdAt}</div>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className='block2-bottom'>
+              <form onSubmit={handleSubmit}>
+                <input type="text" name="text" placeholder="enter a comment here" onChange={handleChange} value={formFields.text} />
+              </form>
+              <Link to={`/api/posts/${id}/edit`}>
+                <button>edit</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+        : <p>error</p>
+      }
     </main>
 
   )

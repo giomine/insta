@@ -10,7 +10,7 @@ export const addComment = async (req, res) => {
     const commentToAdd = { ...req.body, owner: req.loggedInUser._id }
     console.log('POST', post)
     // console.log('COMMENT', commentToAdd)
-    post.comments.push(commentToAdd)
+    post.comments.unshift(commentToAdd)
     await post.save()
     return res.status(201).json(post)
   } catch (err) {
