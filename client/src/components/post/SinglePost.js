@@ -47,7 +47,7 @@ const SinglePost = () => {
       }
     }
     getPost()
-  }, [formFields])
+  }, [formFields, posts])
 
   return (
     <main className='homepage single-post-page'>
