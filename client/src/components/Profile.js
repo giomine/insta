@@ -56,7 +56,9 @@ const Profile = () => {
   return (
     <>
       { isAuthenticated() ?
-        userInfo ? 
+        userInfo ?
+        
+        
           <> 
             <div className='profile-top'>
               <div className='profile-picture'></div>
@@ -89,17 +91,18 @@ const Profile = () => {
                   )
                 })
                 :
+
                 <>
-                  { error ? 
-                    <p>{error}</p>
-                    :
-                    <SpinnerComponent/>}
+                  <p>No posts yet!</p>
                 </> 
+
               }
             </div>
+            
           </>
           : 
           <>
+            {/* <p>No posts yet</p> */}
             <SpinnerComponent/>
           </> 
         :
