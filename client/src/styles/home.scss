@@ -58,3 +58,19 @@ a {
     }
   }
 }
+
+// Swap the above media query for this one if you want column instead of grid
+// @media (min-width: 660px){
+//   .homepage{
+//     margin: 0 auto;
+//     width: fit-content;
+//     gap: 2px;
+//     .post-image{
+//       width: 30vw;
+//       height: 30vw;
+//     }
+//     .username, .caption{
+//       width: 30vw;
+//     }
+//   }
+// }
