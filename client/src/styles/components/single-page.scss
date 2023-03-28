@@ -31,6 +31,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (min-width: 660px){
+      padding: 10px 10px 0;
+    }
   }
 
   .block2-top{
@@ -45,6 +48,23 @@
   .single-post-username{
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    .two {
+      text-align: end;
+    }
+    button{
+      @include buttons();
+      width: 50px;
+      padding: 2px;
+      margin: 0 2px;
+      @media (max-width: 660px){
+        width: 80px;
+      }
+      @media (min-width: 850px){
+        padding: 5px;
+        width: 80px;
+      }
+    }
     .profile-picture{
       margin-left: 0;
     }
@@ -67,6 +87,7 @@
     input{
       @include inputs();
       width: 100%;
+      margin: 0;
     }
   }
 

@@ -76,7 +76,20 @@ const SinglePost = () => {
 
           <div className='block2'>
             <div className='block2-top'>
-              <div className='single-post-username'><div className='profile-picture'></div><h4>{posts.owner.username}</h4></div>
+              <div className='single-post-username'>
+                <div className='single-post-username'>
+                  <div className='profile-picture'></div>
+                  <h4>{posts.owner.username}</h4>
+                </div>
+                {isAuthenticated() && userIsOwner(posts) &&
+                <div className='two'>
+                  <Link to={`/api/posts/${id}/edit`}>
+                    <button>Edit</button>
+                  </Link>
+                  <button onClick={handleDelete}>Delete</button>
+                </div>
+                }
+              </div>
               <div className='single-post-caption'>{posts.caption}</div>
             </div>
 
@@ -99,7 +112,7 @@ const SinglePost = () => {
               <form onSubmit={handleSubmit}>
                 <input type="text" name="text" placeholder={`Leave a comment for ${posts.owner.username}`} onChange={handleChange} value={formFields.text} />
               </form>
-              {isAuthenticated() && userIsOwner(posts) &&
+              {/* {isAuthenticated() && userIsOwner(posts) &&
                 <>
                   <Link to={`/api/posts/${id}/edit`}>
                     <button>edit</button>
@@ -107,7 +120,7 @@ const SinglePost = () => {
                   <button onClick={handleDelete}>Delete</button>
                 </>
 
-              }
+              } */}
             </div>
           </div>
         </div>
