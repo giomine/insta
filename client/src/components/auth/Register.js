@@ -12,6 +12,7 @@ const Register = () => {
     email: '',
     password: '',
     passwordConfirmation: '',
+    bio: '',
   })
 
   const handleChange = (e) => {
@@ -44,6 +45,8 @@ const Register = () => {
           <input type="text" name="username" placeholder='username' onChange={handleChange} value={formFields.username} />
           <label htmlFor="email"></label>
           <input type="email" name="email" placeholder="email address" onChange={handleChange} value={formFields.email} />
+          <label htmlFor="bio"></label>
+          <input type="text" name="bio" placeholder='your bio' onChange={handleChange} value={formFields.bio} />
           <label htmlFor="password"></label>
           <input type="password" name="password" placeholder="password" onChange={handleChange} value={formFields.password} />
           <label htmlFor="passwordConfirmation"></label>

@@ -11,10 +11,23 @@ const Profile = () => {
   const navigate = useNavigate()
 
   const [ userInfo, setUserInfo ] = useState()
+  const [ newBio, setNewBio ] = useState() //! Currently saves in state but no PUT route so doesn't update user profile. Uncomment line 62 if you want to display edited bio from localStorage.
   const [ error, setError ] = useState('')
 
   const handleClick = () => {
     navigate('/posts')
+  }
+
+  const handleChange = (e) => {
+    setNewBio( e.target.value )
+    console.log(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    userInfo.bio = newBio
+    window.localStorage.setItem('newBio', newBio)
+    console.log(userInfo)
   }
 
   useEffect(() => {
@@ -43,13 +56,18 @@ const Profile = () => {
   return (
     <>
       { isAuthenticated() ?
-        userInfo ?
+        userInfo ? 
           <> 
             <div className='profile-top'>
               <div className='profile-picture'></div>
               <div className='profile-right'>
                 <div className='profile-username'>{userInfo.username}</div>
-                <div className='bio'>Bio Quisquam obcaecati sint tempora, facilis.</div>
+                {/* <div className='bio' onClick={handleBio}>{bio}</div> */}
+                <form action="" onSubmit={handleSubmit}>
+                  <input style={{ display: 'block', border: 'none', outline: 'none' }} type="text" name="bio" onChange={handleChange} value={newBio} placeholder={userInfo.bio ? userInfo.bio : 'Edit bio'} />
+                  {/* <input style={{ display: 'block', border: 'none', outline: 'none' }} type="text" name="bio" onChange={handleChange} value={newBio ? newBio : window.localStorage.getItem('newBio')} placeholder={userInfo.bio ? userInfo.bio : 'Edit bio'} /> */}
+                </form>
+                
                 <button onClick={handleClick}>Create new post</button>
               </div>
             </div>
@@ -63,14 +81,14 @@ const Profile = () => {
                     <Link key={_id} to={`/posts/${_id}`}>
                       <DisplayPosts 
                         _id={_id}
-                        // username={userInfo.username}
                         image={image}
+                        // username={userInfo.username}
                         // caption={caption}
                       />
                     </Link>
                   )
                 })
-                : 
+                :
                 <>
                   { error ? 
                     <p>{error}</p>
@@ -80,11 +98,12 @@ const Profile = () => {
               }
             </div>
           </>
-          :
+          : 
           <>
-            <SpinnerComponent />
-          </>
-        : 'Please log in!'
+            <SpinnerComponent/>
+          </> 
+        :
+        'Please log in!'
       }
     </>
   )

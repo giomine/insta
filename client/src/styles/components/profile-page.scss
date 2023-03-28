@@ -26,6 +26,12 @@
       font-weight: bold;
     }
 
+    input{
+      text-align: right;
+      width: 100%;
+      // color: rgb(15, 15, 15);
+    }
+
     button{
       @include buttons();
       padding: 5px;
