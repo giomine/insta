@@ -30,5 +30,8 @@ router.route('/posts/:postId/comments/:commentId')
 router.route('/profile')
   .get(secureRoute, profileView)
 
+// router.route('/profile/:id')
+//   .put(editProfile)
+
 export default router
 
