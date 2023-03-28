@@ -55,52 +55,56 @@ const Profile = () => {
 
   return (
     <>
-      {userInfo ? 
-        <> 
-          <div className='profile-top'>
-            <div className='profile-picture'></div>
-            <div className='profile-right'>
-              <div className='profile-username'>{userInfo.username}</div>
-              {/* <div className='bio' onClick={handleBio}>{bio}</div> */}
-              <form action="" onSubmit={handleSubmit}>
-                <input style={{ display: 'block', border: 'none', outline: 'none' }} type="text" name="bio" onChange={handleChange} value={newBio} placeholder={userInfo.bio ? userInfo.bio : 'Edit bio'} />
-                {/* <input style={{ display: 'block', border: 'none', outline: 'none' }} type="text" name="bio" onChange={handleChange} value={newBio ? newBio : window.localStorage.getItem('newBio')} placeholder={userInfo.bio ? userInfo.bio : 'Edit bio'} /> */}
-              </form>
-              
-              <button onClick={handleClick}>Create new post</button>
+      { isAuthenticated() ?
+        userInfo ? 
+          <> 
+            <div className='profile-top'>
+              <div className='profile-picture'></div>
+              <div className='profile-right'>
+                <div className='profile-username'>{userInfo.username}</div>
+                {/* <div className='bio' onClick={handleBio}>{bio}</div> */}
+                <form action="" onSubmit={handleSubmit}>
+                  <input style={{ display: 'block', border: 'none', outline: 'none' }} type="text" name="bio" onChange={handleChange} value={newBio} placeholder={userInfo.bio ? userInfo.bio : 'Edit bio'} />
+                  {/* <input style={{ display: 'block', border: 'none', outline: 'none' }} type="text" name="bio" onChange={handleChange} value={newBio ? newBio : window.localStorage.getItem('newBio')} placeholder={userInfo.bio ? userInfo.bio : 'Edit bio'} /> */}
+                </form>
+                
+                <button onClick={handleClick}>Create new post</button>
+              </div>
             </div>
-          </div>
-          
-          <div className='homepage profilepage'>
-            {userInfo.posts.length > 0 ?
-              userInfo.posts.map(post => {
-                const { _id, caption, image, owner } = post
-                // console.log(_id, caption, image, owner.username)
-                return (
-                  <Link key={_id} to={`/posts/${_id}`}>
-                    <DisplayPosts 
-                      _id={_id}
-                      image={image}
-                      // username={userInfo.username}
-                      // caption={caption}
-                    />
-                  </Link>
-                )
-              })
-              : <>No posts yet!</> 
-            }
-          </div>
-        </>
-        : 
-        <>
-          { error ? 
-            <p>{error}</p>
-            :
-            <SpinnerComponent/>}
-        </> 
-        // 'Please log in!'
+            
+            <div className='homepage profilepage'>
+              {userInfo.posts.length > 0 ?
+                userInfo.posts.map(post => {
+                  const { _id, caption, image, owner } = post
+                  // console.log(_id, caption, image, owner.username)
+                  return (
+                    <Link key={_id} to={`/posts/${_id}`}>
+                      <DisplayPosts 
+                        _id={_id}
+                        image={image}
+                        // username={userInfo.username}
+                        // caption={caption}
+                      />
+                    </Link>
+                  )
+                })
+                :
+                <>
+                  { error ? 
+                    <p>{error}</p>
+                    :
+                    <SpinnerComponent/>}
+                </> 
+              }
+            </div>
+          </>
+          : 
+          <>
+            <SpinnerComponent/>
+          </> 
+        :
+        'Please log in!'
       }
-
     </>
   )
 }

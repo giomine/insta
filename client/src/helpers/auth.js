@@ -45,7 +45,7 @@ export const setHeaders = () => {
 // check if the token payload "sub" matches the post's "addedBy._id"
 
 export const userIsOwner  = (post) => {
-  console.log('entered userIsOwner')
+  // console.log('entered userIsOwner')
   const payload = getPayload()
   // console.log('Payload', payload)
   if (!payload) return false
