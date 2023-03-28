@@ -1,83 +1,63 @@
 @import '../global/variables.scss';
 
 
-.profilepage{
-  .photo-center{
-    @include flex-center();
-  }
-  .photos-wrapper{
-    @include flex-center();
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    // width: 98vw; // might need these for centering
-    // margin: 0 auto;
-  }
-  .post-card, .post-image{
-    width: 32.7vw;
-    height: 32.7vw;
-    margin: 0 1px 1px;
-    border: none;
-  }
-  .caption, .username{
-    height: 0;
-    padding: 0;
-  }
-  @media (min-width: 660px){
-    .photos-wrapper{
-      width: 90vw;
-      max-width: 1050px;
-    }
-    .post-card, .post-image{
-      width: 28vw;
-      height: 28vw;
-      margin: 0 2px 2px;
-      max-width: 345px;
-      max-height: 345px;
-    }
-    .caption{
-      padding: 0;
-    }
+.profile-top{
+  width: 100vw;
+  border-bottom: 1px solid rgb(177, 174, 174);
+  padding: 40px 15px;
+  margin-bottom: 30px;
+  @include flex-center();
+  justify-content: space-between;
+
+  .profile-picture{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(177, 174, 174);
+    border-radius: 50%;
+    margin-right: 20px;
   }
 
+  .profile-right{
+    width: 60%;
+    text-align: right;
 
+    .profile-username{
+      font-weight: bold;
+    }
+
+    button{
+      @include buttons();
+      padding: 5px;
+    }
+  }
+}
+
+
+@media (min-width: 600px){
   .profile-top{
-    width: 100vw;
-    border-bottom: 1px solid rgb(177, 174, 174);
-    padding: 40px 15px;
-    margin-bottom: 30px;
-    @include flex-center();
-    justify-content: space-between;
+    width: 80vw;
+  }
+}
 
-    .profile-picture{
-      height: 100px;
-      width: 100px;
-      background-color: rgb(177, 174, 174);
-      border-radius: 50%;
-      margin-right: 20px;
-    }
 
-    .profile-right{
-      width: 60%;
-      text-align: right;
-
-      .profile-username{
-        font-weight: bold;
-      }
-
-      button{
-        @include buttons();
-        padding: 5px;
-      }
-    }
-
-    @media(min-width: 1250px){
-      .profile-picture{
-        height: 150px;
-        width: 150px;
-      }
-      .profile-right{
-        width: 55%;
-      }
+.profilepage{
+  width: 100vw;
+  max-width: 908px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  .post-image{
+    width: 33vw;
+    height: 33vw;
+  }
+  .username, .caption{
+    width: 33vw;
+    max-width: 300px;
+    display: none;
+  }
+  .post-image, .post-card{
+    max-width: 300px;
+    &:not(.post-card){
+      max-height: 300px;
     }
   }
 }
