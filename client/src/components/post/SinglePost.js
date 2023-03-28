@@ -94,19 +94,21 @@ const SinglePost = () => {
                 )
               })}
             </div>
-            {userIsOwner(posts) &&
-              <div className='block2-bottom'>
-                <form onSubmit={handleSubmit}>
-                  <input type="text" name="text" placeholder="enter a comment here" onChange={handleChange} value={formFields.text} />
-                </form>
-                <Link to={`/api/posts/${id}/edit`}>
-                  <button>edit</button>
-                </Link>
-                <button onClick={handleDelete}>Delete</button>
-              </div>
-            }
 
+            <div className='block2-bottom'>
+              <form onSubmit={handleSubmit}>
+                <input type="text" name="text" placeholder="enter a comment here" onChange={handleChange} value={formFields.text} />
+              </form>
+              {isAuthenticated() && userIsOwner(posts) &&
+                <>
+                  <Link to={`/api/posts/${id}/edit`}>
+                    <button>edit</button>
+                  </Link>
+                  <button onClick={handleDelete}>Delete</button>
+                </>
 
+              }
+            </div>
           </div>
         </div>
         : <p>error</p>
