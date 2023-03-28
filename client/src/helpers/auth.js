@@ -49,6 +49,7 @@ export const userIsOwner  = (post) => {
   const payload = getPayload()
   if (!payload) return
   if (post){
+    console.log('PAYLOAD SUB',payload.sub)
     return payload.sub === post.addedBy._id
   }
 }
