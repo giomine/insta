@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { isAuthenticated, getToken } from '../../helpers/auth'
+import { isAuthenticated, getToken, userIsOwner } from '../../helpers/auth'
 import { useNavigate } from 'react-router-dom'
 import DisplayPosts from './DisplayPosts'
 
@@ -40,7 +40,7 @@ const SinglePost = () => {
     const getPost = async () => {
       try {
         const { data } = await axios.get(`/api/posts/${id}`)
-        console.log(data)
+        // console.log(data)
         setPosts(data)
       } catch (err) {
         console.log(err)
@@ -85,9 +85,11 @@ const SinglePost = () => {
               <form onSubmit={handleSubmit}>
                 <input type="text" name="text" placeholder="enter a comment here" onChange={handleChange} value={formFields.text} />
               </form>
-              <Link to={`/api/posts/${id}/edit`}>
-                <button>edit</button>
-              </Link>
+              {isAuthenticated() && userIsOwner(posts) &&
+                <Link to={`/api/posts/${id}/edit`}>
+                  <button>edit</button>
+                </Link>
+              }
             </div>
           </div>
         </div>

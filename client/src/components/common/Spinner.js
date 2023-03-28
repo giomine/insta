@@ -1,7 +1,12 @@
-const Spinner = () => {
+import Spinner from 'react-bootstrap/Spinner'
+
+const SpinnerComponent = () => {
   return (
-    <h1>Spinner</h1>
+    <div className='spinner'>
+      <h3 className='title'> Loading ... </h3>
+      <Spinner className='animation'/>
+    </div>
   )
 }
 
-export default Spinner
+export default SpinnerComponent
