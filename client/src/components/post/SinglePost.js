@@ -13,7 +13,7 @@ const SinglePost = () => {
 
   const [posts, setPosts] = useState(null)
 
-  const [formFields, setFormFields] = useState({
+  const [formFields, setFormFields] = useState({  //! maybe rename to comment field if thats what this is? 
     text: '',
     // owner: 'anon',
   })
@@ -44,7 +44,7 @@ const SinglePost = () => {
         },
       })
       console.log('DELETING')
-      navigate('/posts')
+      navigate('/profile')
     } catch (err) {
       console.log('errory', err)
     }
@@ -76,18 +76,18 @@ const SinglePost = () => {
 
           <div className='block2'>
             <div className='block2-top'>
-              <div>{posts.owner.username}</div>
-              <div>{posts.caption}</div>
+              <div className='single-post-username'><div className='profile-picture'></div><h4>{posts.owner.username}</h4></div>
+              <div className='single-post-caption'>{posts.caption}</div>
             </div>
 
             <div className='block2-mid'>
-              <h5>Comments</h5>
+              <h4>Comments</h4>
               {posts.comments.map(comment => {
                 const { text, owner, createdAt } = comment
                 // console.log(owner.username, text, createdAt)
                 return (
                   <div key={posts.id} className='comment'>
-                    <div>{owner.username}</div>
+                    <div className='single-post-username'><div className='profile-picture'></div><>{owner.username}</></div>
                     <div>{text}</div>
                     <div>{createdAt}</div>
                   </div>
@@ -97,7 +97,7 @@ const SinglePost = () => {
 
             <div className='block2-bottom'>
               <form onSubmit={handleSubmit}>
-                <input type="text" name="text" placeholder="enter a comment here" onChange={handleChange} value={formFields.text} />
+                <input type="text" name="text" placeholder={`Leave a comment for ${posts.owner.username}`} onChange={handleChange} value={formFields.text} />
               </form>
               {isAuthenticated() && userIsOwner(posts) &&
                 <>

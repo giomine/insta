@@ -10,12 +10,21 @@ a {
   grid-template-columns: 1fr;
   justify-content: space-between;
   gap: 5px;
+  padding-top: 30px;
   
 
   .post-card{
-    // border: $border;
     border-radius: 3px;
     width: fit-content;
+    font-size: $text;
+  }
+
+  .profile-picture{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(177, 174, 174);
+    border-radius: 50%;
+    margin: 0 10px 0 5px;
   }
 
   .post-image{
@@ -26,13 +35,40 @@ a {
     background-repeat: no-repeat;
   }
 
-  .username, .caption{
-    padding: 10px;
-    border: $border;
-  }
-  .caption{
-    height: 100px;
+  .thing{
+    padding: 0 10px;
+    max-height: 70px;
     overflow: scroll;
+    margin: 10px 0;
+  }
+  
+  .username {
+    padding: 10px 0;
+  }
+
+  .caption{
+    padding: 5px 0;
+  }
+
+  .username{
+    font-weight: bold;
+    margin-right: 10px;
+    @include flex-center();
+    justify-content: flex-start;
+  }
+
+  .caption{
+    overflow: scroll;
+  }
+
+  .home-comments{
+    @include flex-center();
+    justify-content: space-between;
+    font-size: $text;
+    padding: 0 10px 30px;
+    .home-comments-left{
+      font-weight: bold;
+    }
   }
 
   .spinner{
@@ -49,7 +85,6 @@ a {
 @media (min-width: 660px){
   .homepage{
     width: 90vw;
-    max-width: 908px;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2px;
     .post-image{
@@ -57,14 +92,7 @@ a {
       height: 30vw;
     }
     .username, .caption{
-      width: 30vw;
       max-width: 300px;
-    }
-    .post-image, .post-card{
-      max-width: 300px;
-      &:not(.post-card){
-        max-height: 300px;
-      }
     }
   }
 }
