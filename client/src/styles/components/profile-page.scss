@@ -4,11 +4,14 @@
 
 .profile-top{
   width: 100vw;
-  border-bottom: 1px solid rgb(177, 174, 174);
-  padding: 40px 15px;
+  padding: 40px 15px 0;
   margin-bottom: 30px;
   @include flex-center();
   justify-content: space-between;
+  @media (min-width: 660px){
+    border-bottom: 1px solid rgb(177, 174, 174);
+    padding: 40px 15px;
+  }
 
   .profile-picture{
     height: 100px;
