@@ -73,6 +73,7 @@
   }
   .post-image, .post-card{
     max-width: 300px;
+    max-height: 300px;
     &:not(.post-card){
       max-height: 300px;
     }
