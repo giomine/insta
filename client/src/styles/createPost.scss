@@ -6,7 +6,8 @@
 
   .form-border{
     width: 90vw;
-    height: 50vh;
+    // height: 50vh;
+    padding: 30px 0;
     border: $border;
     @include flex-center();
     flex-direction: column;
@@ -16,12 +17,22 @@
       flex-direction: column;
       height: 50%;
       
-      input{
+      input, textarea{
         @include inputs();
+        // width: 220px;
+        // font-size: 0.9rem;
       }
 
       button{
         @include buttons();
+      }
+
+      .profile-picture{
+        height: 220px;
+        width: 220px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
       
     }

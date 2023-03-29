@@ -31,6 +31,7 @@ const EditPost = () => {
         const { data } = await axios.get(`/api/posts/${id}`)
         setFormFields(data)
         setPosts(data)
+        console.log(data.image)
       } catch (error) {
         console.log(error)
       }
@@ -61,12 +62,16 @@ const EditPost = () => {
   return (
     <>
       {posts && isAuthenticated() && userIsOwner(posts) ?
-        <main className="form-page">
+        <main className="form-container">
           <div className="form-border">
             <form action="" onSubmit={handleSubmit}>
               <h1>Edit Post</h1>
-              <label htmlFor="caption"></label>
-              <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
+              <div style={{ backgroundImage: `url('${posts.image}')` }} className='profile-picture'></div>
+              {/* <label htmlFor="caption"></label>
+              <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} /> */}
+              <label htmlFor="caption">
+                <textarea name='caption' cols="21" rows="2" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
+              </label>
               <button type="submit">Submit</button>
               { error ? <p>{error}</p> : '' }
             </form>
