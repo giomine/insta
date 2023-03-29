@@ -1,27 +1,37 @@
 @import './variables.scss';
 
-.register-border{
-  width: 90vw;
-  height: 70vh;
-  border: $border;
+
+.register-form-container{
+  padding: 50px 0;
+}
+
+  .register-border{
+    width: 90vw;
+    padding: 30px 0;
+    // height: 70vh;
+    border: $border;
   @include flex-center();
   flex-direction: column;
 
   form {
     @include flex-center();
     flex-direction: column;
-    height: 50%;
+    // height: 50%;
     
     input{
       @include inputs();
     }
-
+    
     button{
       @include buttons();
     }
     
   }
+
   @media(min-width: 600px){
     width: 50vw;
+  }
+  @media(min-width: 1000px){
+    width: 30vw;
   }
 }

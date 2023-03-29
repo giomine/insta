@@ -38,7 +38,7 @@ const Login = () => {
   }
 
   return (
-    <main className="form-container">
+    <main className="register-form-container">
       <div className="register-border">
         <div>
           <div>
