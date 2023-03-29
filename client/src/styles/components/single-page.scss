@@ -11,9 +11,9 @@
   .direction{
     @include flex-center();
     flex-direction: column;
-    max-width: 1000px;
-    max-height: 500px;
     @media (min-width: 660px){
+      max-width: 1000px;
+      max-height: 500px;
       flex-direction: row;
       align-items: flex-start;
     }
