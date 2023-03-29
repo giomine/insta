@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import DisplayPosts from './post/DisplayPosts'
-// import SpinnerComponent from './common/Spinner'
 import axios from 'axios'
 
 const OtherProfiles = () => {
@@ -9,7 +8,6 @@ const OtherProfiles = () => {
   const { id } = useParams()
   const [ userInfo, setUserInfo ] = useState()
   const [ error, setError ] = useState('')
-
 
   useEffect(() => {
     const getProfile = async () => {
@@ -31,8 +29,6 @@ const OtherProfiles = () => {
 
   return (
     <>
-      {/* <>Welcome!</> */}
-      {/* //! if authenticated, show create button */}
       <>
         { userInfo ?
         
