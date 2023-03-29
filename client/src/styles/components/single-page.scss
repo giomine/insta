@@ -11,6 +11,8 @@
   .direction{
     @include flex-center();
     flex-direction: column;
+    max-width: 1000px;
+    max-height: 500px;
     @media (min-width: 660px){
       flex-direction: row;
       align-items: flex-start;
@@ -22,11 +24,17 @@
       height: 40vw;
       width: 40vw;
     }
+    .post-image{
+      max-width: 500px;
+      max-height: 500px;
+    }
   }
 
   .block2{
     font-size: $text;
     width: 100vw;
+    max-width: 500px;
+    max-height: 500px;
     padding: 10px;
     display: flex;
     flex-direction: column;
