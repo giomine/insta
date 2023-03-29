@@ -1,0 +1,37 @@
+.register-border {
+  width: 90vw;
+  height: 70vh;
+  border: 1px solid rgb(177, 174, 174);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.register-border form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50%;
+}
+.register-border form input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+}
+.register-border form button {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+}
+@media (min-width: 600px) {
+  .register-border {
+    width: 50vw;
+  }
+}/*# sourceMappingURL=register.css.map */

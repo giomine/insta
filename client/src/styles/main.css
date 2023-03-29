@@ -1,0 +1,441 @@
+a {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.homepage {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  gap: 5px;
+  padding-top: 30px;
+}
+.homepage .post-card {
+  border-radius: 3px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.9rem;
+}
+.homepage .profile-picture {
+  height: 30px;
+  width: 30px;
+  background-color: rgb(177, 174, 174);
+  border-radius: 50%;
+  margin: 0 10px 0 5px;
+}
+.homepage .post-image {
+  width: 100vw;
+  height: 100vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.homepage .thing {
+  padding: 0 10px;
+  max-height: 70px;
+  overflow: scroll;
+  margin: 10px 0;
+}
+.homepage .username {
+  padding: 10px 0;
+}
+.homepage .caption {
+  padding: 5px 0;
+}
+.homepage .username {
+  font-weight: bold;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.homepage .caption {
+  overflow: scroll;
+}
+.homepage .home-comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 0 10px 30px;
+  height: 20px;
+  overflow: scroll;
+}
+.homepage .home-comments .home-comments-left {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.homepage .spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50%, -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 660px) {
+  .homepage {
+    width: 90vw;
+    max-width: 930px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+  }
+  .homepage .post-image {
+    width: 30vw;
+    max-width: 300px;
+    height: 30vw;
+    max-height: 300px;
+  }
+  .homepage .username, .homepage .caption {
+    max-width: 300px;
+  }
+}
+@media (min-width: 660px) and (max-width: 750px) {
+  .home-comments-right {
+    max-width: 80px;
+  }
+}
+.login-page form {
+  background-color: white;
+  padding: 50px;
+}
+.login-page form label {
+  display: flex;
+}
+.login-page form input {
+  margin-bottom: 5px;
+  border: 1px solid rgb(177, 174, 174);
+  padding: 5px;
+}
+
+.form-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container .form-border {
+  width: 90vw;
+  height: 50vh;
+  border: 1px solid rgb(177, 174, 174);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-container .form-border form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50%;
+}
+.form-container .form-border form input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+}
+.form-container .form-border form button {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+}
+@media (min-width: 600px) {
+  .form-container .form-border {
+    width: 50vw;
+  }
+}
+
+.register-border {
+  width: 90vw;
+  height: 70vh;
+  border: 1px solid rgb(177, 174, 174);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.register-border form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50%;
+}
+.register-border form input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+}
+.register-border form button {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+}
+@media (min-width: 600px) {
+  .register-border {
+    width: 50vw;
+  }
+}
+
+.navbar {
+  width: 100vw;
+  border-bottom: 1px solid rgb(177, 174, 174);
+}
+
+.profile-top {
+  width: 100vw;
+  border-bottom: 1px solid rgb(177, 174, 174);
+  padding: 40px 15px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-top .profile-picture {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(177, 174, 174);
+  border-radius: 50%;
+  margin-right: 20px;
+}
+@media (max-width: 350px) {
+  .profile-top .profile-picture {
+    height: 70px;
+    width: 70px;
+  }
+}
+.profile-top .profile-right {
+  width: 60%;
+  text-align: right;
+}
+.profile-top .profile-right .profile-username {
+  font-weight: bold;
+}
+.profile-top .profile-right input {
+  text-align: right;
+  width: 100%;
+}
+.profile-top .profile-right button {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+  padding: 5px;
+}
+@media (max-width: 350px) {
+  .profile-top .profile-right button {
+    font-size: 0.8rem;
+    width: 120px;
+  }
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50%, -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .profile-top {
+    width: 80vw;
+  }
+}
+.profilepage {
+  width: 100vw;
+  max-width: 908px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+}
+.profilepage .post-image, .profilepage .post-card {
+  width: 33vw;
+  height: 33vw;
+}
+.profilepage .username, .profilepage .caption {
+  display: none;
+}
+.profilepage .post-image, .profilepage .post-card {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.single-post-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.single-post-page .caption, .single-post-page .username {
+  display: none;
+}
+.single-post-page .direction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 660px) {
+  .single-post-page .direction {
+    max-width: 1000px;
+    max-height: 500px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+@media (min-width: 660px) {
+  .single-post-page .block1 {
+    height: 40vw;
+    width: 40vw;
+  }
+}
+.single-post-page .block1 .post-image {
+  max-width: 500px;
+  max-height: 500px;
+}
+.single-post-page .block2 {
+  font-size: 0.9rem;
+  width: 100vw;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 660px) {
+  .single-post-page .block2 {
+    padding: 10px 10px 0;
+  }
+}
+.single-post-page .block2-top {
+  max-height: 60%;
+}
+.single-post-page .block2-top .single-post-caption {
+  max-height: 90px;
+  overflow: scroll;
+  margin: 10px 0;
+}
+.single-post-page .single-post-username {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.single-post-page .single-post-username .two {
+  text-align: end;
+}
+.single-post-page .single-post-username button {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+  width: 50px;
+  padding: 2px;
+  margin: 0 2px;
+}
+@media (max-width: 660px) {
+  .single-post-page .single-post-username button {
+    width: 80px;
+  }
+}
+@media (min-width: 850px) {
+  .single-post-page .single-post-username button {
+    padding: 5px;
+    width: 80px;
+  }
+}
+.single-post-page .single-post-username .profile-picture {
+  margin-left: 0;
+}
+.single-post-page .block2-mid {
+  width: 100vw;
+  height: 25vh;
+  overflow: scroll;
+  margin: 10px 0;
+}
+@media (min-width: 660px) {
+  .single-post-page .block2-mid {
+    width: 100%;
+    height: 50vh;
+  }
+}
+.single-post-page .block2-bottom input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  width: 100%;
+  margin: 0;
+}
+.single-post-page .comment {
+  padding: 5px 0;
+}
+.single-post-page .comment .profile-picture {
+  width: 25px;
+  height: 25px;
+}
+@media (min-width: 660px) {
+  .single-post-page .post-image, .single-post-page .block2 {
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a, a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+
+h4 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.container {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}/*# sourceMappingURL=main.css.map */

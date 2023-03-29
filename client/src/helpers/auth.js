@@ -51,7 +51,10 @@ export const userIsOwner  = (post) => {
   if (!payload) return false
   if (post){
     const ownerId = post.owner ? post.owner.id : null
+    console.log('ownerId', ownerId)
     const addedById = post.addedBy ? post.addedBy._id : null
+    console.log('addedById', addedById)
+    console.log('payload.sub === ownerId || payload.sub === addedById', payload.sub === ownerId || payload.sub === addedById)
     return payload.sub === ownerId || payload.sub === addedById
 
   }
