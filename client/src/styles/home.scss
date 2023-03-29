@@ -104,7 +104,13 @@ a {
   }
 }
 
-// Swap the above media query for this one if you want column instead of grid
+@media (min-width: 660px) and (max-width: 750px ){
+  .home-comments-right {
+    max-width: 80px;
+  }
+}
+
+// Swap the above media query for this one if you want column instead of grid THIS PROBABLY doesn't work now i made a lot of changes
 // @media (min-width: 660px){
 //   .homepage{
 //     margin: 0 auto;
