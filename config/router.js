@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import { getPosts, getSinglePost, createPost, editPost, deletedPost } from '../controllers/posts.js'
+import { getPosts, getSinglePost, createPost, editPost, deletedPost, getEditPage } from '../controllers/posts.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
 import { profileView } from '../controllers/users.js'
@@ -14,6 +14,9 @@ router.route('/posts/:id')
   .get(getSinglePost)
   .put(secureRoute, editPost)
   .delete(secureRoute, deletedPost)
+
+router.route('/posts/:id/edit')
+  .get(getEditPage)
 
 router.route('/register')
   .post(registerUser)

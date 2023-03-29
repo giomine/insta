@@ -18,17 +18,22 @@ const EditPost = () => {
   })
 
   const [error, setError ] = useState('')
+  const [posts, setPosts] = useState(null)
 
 
   //!On Mount
   useEffect(() => {
 
-    (!isAuthenticated() || !userIsOwner() && navigate(`/api/posts/${id}`))
+    // console.log('!isAuthenticated() || !userIsOwner(posts)', !isAuthenticated() || !userIsOwner(posts) )
+    // ((!isAuthenticated()) && navigate(`/posts/${id}`))
+    // (!isAuthenticated() || !userIsOwner(posts)) && navigate(`/posts/${id}`)
+    
 
     const getPost = async () => {
       try {
         const { data } = await axios.get(`/api/posts/${id}`)
         setFormFields(data)
+        setPosts(data)
       } catch (error) {
         console.log(error)
       }
@@ -57,17 +62,31 @@ const EditPost = () => {
 
   //! Return
   return (
-    <main className="form-page">
-      <div className="form-border">
-        <form action="" onSubmit={handleSubmit}>
-          <h1>Edit Post</h1>
-          <label htmlFor="caption"></label>
-          <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
-          <button type="submit">Submit</button>
-          { error ? <p>{error}</p> : '' }
-        </form>
-      </div>
-    </main>
+    <>
+      {posts && isAuthenticated() && userIsOwner(posts) ?
+        <main className="form-page">
+          <div className="form-border">
+            <form action="" onSubmit={handleSubmit}>
+              <h1>Edit Post</h1>
+              <label htmlFor="caption"></label>
+              <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
+              <button type="submit">Submit</button>
+              { error ? <p>{error}</p> : '' }
+            </form>
+          </div>
+        </main>
+        :
+        <>
+          {posts && !userIsOwner(posts) && !isAuthenticated() &&
+            <p>You are not authenticated. Please log in to edit this post  </p>
+          }
+          {posts && !userIsOwner(posts) && isAuthenticated() &&
+            <p>You are not the owner of this post. You cannot edit it </p>
+          }
+          { posts && <button onClick={() => navigate('/')}>Go Back to Home </button>}
+        </>
+      }
+    </>
 
   )
 }

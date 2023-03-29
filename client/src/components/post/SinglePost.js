@@ -1,8 +1,7 @@
-import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { isAuthenticated, getToken, userIsOwner } from '../../helpers/auth'
-import { useNavigate } from 'react-router-dom'
 import DisplayPosts from './DisplayPosts'
 
 
@@ -61,7 +60,7 @@ const SinglePost = () => {
       }
     }
     getPost()
-  }, [formFields, posts])
+  }, [id])
 
   return (
     <main className='homepage single-post-page'>
@@ -83,7 +82,7 @@ const SinglePost = () => {
                 </div>
                 {isAuthenticated() && userIsOwner(posts) &&
                 <div className='two'>
-                  <Link to={`/api/posts/${id}/edit`}>
+                  <Link to={`/posts/${posts._id}/edit`} >
                     <button>Edit</button>
                   </Link>
                   <button onClick={handleDelete}>Delete</button>

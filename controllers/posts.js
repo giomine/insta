@@ -51,6 +51,22 @@ export const createPost = async (req, res) => {
   }
 }
 
+// * GET etEditPage
+// Endpoint: /posts/:id/edit
+
+export const getEditPage = async (req, res) => {
+  try {
+    const { id } = req.params
+    const post = await Post.findById(id)
+    if (!post) throw new NotFound('Post not found')
+    return res.json(post)
+
+  } catch (err) {
+    return sendError(err, res)
+  }
+}
+
+
 // * PUT route
 // Endpoint: /posts/:id
 export const editPost = async (req, res) => {

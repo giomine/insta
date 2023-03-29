@@ -1,0 +1,124 @@
+.single-post-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.single-post-page .caption, .single-post-page .username {
+  display: none;
+}
+.single-post-page .direction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 660px) {
+  .single-post-page .direction {
+    max-width: 1000px;
+    max-height: 500px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+@media (min-width: 660px) {
+  .single-post-page .block1 {
+    height: 40vw;
+    width: 40vw;
+  }
+}
+.single-post-page .block1 .post-image {
+  max-width: 500px;
+  max-height: 500px;
+}
+.single-post-page .block2 {
+  font-size: 0.9rem;
+  width: 100vw;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 660px) {
+  .single-post-page .block2 {
+    padding: 10px 10px 0;
+  }
+}
+.single-post-page .block2-top {
+  max-height: 60%;
+}
+.single-post-page .block2-top .single-post-caption {
+  max-height: 90px;
+  overflow: scroll;
+  margin: 10px 0;
+}
+.single-post-page .single-post-username {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.single-post-page .single-post-username .two {
+  text-align: end;
+}
+.single-post-page .single-post-username button {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+  width: 50px;
+  padding: 2px;
+  margin: 0 2px;
+}
+@media (max-width: 660px) {
+  .single-post-page .single-post-username button {
+    width: 80px;
+  }
+}
+@media (min-width: 850px) {
+  .single-post-page .single-post-username button {
+    padding: 5px;
+    width: 80px;
+  }
+}
+.single-post-page .single-post-username .profile-picture {
+  margin-left: 0;
+}
+.single-post-page .block2-mid {
+  width: 100vw;
+  height: 25vh;
+  overflow: scroll;
+  margin: 10px 0;
+}
+@media (min-width: 660px) {
+  .single-post-page .block2-mid {
+    width: 100%;
+    height: 50vh;
+  }
+}
+.single-post-page .block2-bottom input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  width: 100%;
+  margin: 0;
+}
+.single-post-page .comment {
+  padding: 5px 0;
+}
+.single-post-page .comment .profile-picture {
+  width: 25px;
+  height: 25px;
+}
+@media (min-width: 660px) {
+  .single-post-page .post-image, .single-post-page .block2 {
+    width: 40vw;
+    height: 40vw;
+  }
+}/*# sourceMappingURL=single-page.css.map */
