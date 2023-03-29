@@ -11,6 +11,8 @@ const SinglePost = () => {
   const { id } = useParams()
 
   const [posts, setPosts] = useState(null)
+  const [ user, setUser ] = useState(null)
+  const [ linkUrl, setLinkUrl ] = useState()
 
   const [formFields, setFormFields] = useState({  //! maybe rename to comment field if thats what this is? 
     text: '',
@@ -49,18 +51,51 @@ const SinglePost = () => {
     }
   }
 
+  const getLink = () => {
+    try {
+
+      // console.log('both', user, posts.owner.username)
+      // user === posts.owner.username ? console.log('match') : console.log('no')
+      // linkUrl = (user === posts.owner.username) ? '/profile' : `/profile/${posts.owner.id}`
+      setLinkUrl((user === posts.owner.username) ? '/profile' : `/profile/${posts.owner.id}`)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   useEffect(() => {
     const getPost = async () => {
       try {
         const { data } = await axios.get(`/api/posts/${id}`)
-        // console.log(data)
+        // console.log('post owner ---->', data.owner.username)
         setPosts(data)
+        getLink()
       } catch (err) {
         console.log(err)
       }
     }
     getPost()
-  }, [id])
+  }, [formFields, posts, linkUrl])
+
+  useEffect(() => {
+    const getProfile = async () => {
+      try {
+        const { data } = await axios.get('/api/profile', {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
+        })
+        // console.log(data.username)
+        // console.log('user --->', data.username)
+        setUser(data.username)
+      } catch (err){
+        console.log(err)
+        // setError(err)
+      }
+    }
+    getProfile()
+  }, [])
+
 
   return (
     <main className='homepage single-post-page'>
@@ -70,6 +105,8 @@ const SinglePost = () => {
             <DisplayPosts
               id={posts.id}
               image={posts.image}
+              // link={linkUrl}
+              // username={posts.owner.username}
             />
           </div>
 
@@ -78,7 +115,9 @@ const SinglePost = () => {
               <div className='single-post-username'>
                 <div className='single-post-username'>
                   <div className='profile-picture'></div>
-                  <h4>{posts.owner.username}</h4>
+                  <Link to={linkUrl}>
+                    <h4>{posts.owner.username}</h4>
+                  </Link>  
                 </div>
                 {isAuthenticated() && userIsOwner(posts) &&
                 <div className='two'>
@@ -103,7 +142,7 @@ const SinglePost = () => {
                       <div key={posts.id} className='comment'>
                         <div className='single-post-username'><div className='profile-picture'></div><>{owner.username}</></div>
                         <div>{text}</div>
-                        <div>{createdAt}</div>
+                        <div>{createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
                       </div>
                     )
                   })}
