@@ -54,8 +54,8 @@ const SinglePost = () => {
   const getLink = () => {
     try {
 
-      console.log('both', user, posts.owner.username)
-      user === posts.owner.username ? console.log('match') : console.log('no')
+      // console.log('both', user, posts.owner.username)
+      // user === posts.owner.username ? console.log('match') : console.log('no')
       // linkUrl = (user === posts.owner.username) ? '/profile' : `/profile/${posts.owner.id}`
       setLinkUrl((user === posts.owner.username) ? '/profile' : `/profile/${posts.owner.id}`)
     } catch (err) {
@@ -67,7 +67,7 @@ const SinglePost = () => {
     const getPost = async () => {
       try {
         const { data } = await axios.get(`/api/posts/${id}`)
-        console.log('post owner ---->', data.owner.username)
+        // console.log('post owner ---->', data.owner.username)
         setPosts(data)
         getLink()
       } catch (err) {
@@ -86,7 +86,7 @@ const SinglePost = () => {
           },
         })
         // console.log(data.username)
-        console.log('user --->', data.username)
+        // console.log('user --->', data.username)
         setUser(data.username)
       } catch (err){
         console.log(err)
@@ -142,7 +142,7 @@ const SinglePost = () => {
                       <div key={posts.id} className='comment'>
                         <div className='single-post-username'><div className='profile-picture'></div><>{owner.username}</></div>
                         <div>{text}</div>
-                        <div>{createdAt}</div>
+                        <div>{createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
                       </div>
                     )
                   })}
