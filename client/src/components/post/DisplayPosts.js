@@ -1,17 +1,15 @@
-const DisplayPosts = ({ _id, username, caption, image }) => {
+import { Link } from 'react-router-dom'
+
+const DisplayPosts = ({ _id, userId, link, username, caption, image }) => {
+
 
   return (
     <>
       <div className='post-card' key={_id}>
         <div className='username'>
-          <div className="profile-picture"></div>
-          <h4>{username}</h4>
+          <Link to={link}><h4>{username}</h4></Link>
         </div>
-        <div className='post-image' style={{ backgroundImage: `url('${image}')` }}></div>
-        {/* <div className="thing">
-          <div className="username">{username}</div>
-          <div className="caption">{caption}</div>
-        </div> */}
+        <Link key={_id} to={`/posts/${_id}`}><div className='post-image' style={{ backgroundImage: `url('${image}')` }}></div></Link>
         <div className="thing">
           <div className='caption'>{caption}</div>
         </div>

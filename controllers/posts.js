@@ -9,7 +9,7 @@ import { NotFound, sendError, Unauthorized } from '../config/errors.js'
 export const getPosts = async (req, res) => {
   try {
     // const posts = await Post.find()
-    const posts = await Post.find().populate('owner')
+    const posts = await Post.find().populate('owner').populate('comments.owner')
     return res.json(posts)
   } catch (err) {
     return sendError(err, res)

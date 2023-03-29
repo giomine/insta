@@ -12,6 +12,19 @@ export const profileView = async (req, res) => {
   }
 }
 
+// * GET route
+export const otherUserProfile = async (req, res) => {
+  try {
+    const { id } = req.params
+    // const profile = await User.findById(id)
+    const profile = await User.findById(id).populate('posts')
+    if (!profile) throw new NotFound('User not found')
+    return res.json(profile)
+  } catch (err) {
+    return sendError(err, res)
+  }
+}
+
 
 // * PUT route
 // Endpoint: /profile/:id
