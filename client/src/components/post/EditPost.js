@@ -24,11 +24,8 @@ const EditPost = () => {
   //!On Mount
   useEffect(() => {
 
-    // console.log('!isAuthenticated() || !userIsOwner(posts)', !isAuthenticated() || !userIsOwner(posts) )
-    // ((!isAuthenticated()) && navigate(`/posts/${id}`))
     // (!isAuthenticated() || !userIsOwner(posts)) && navigate(`/posts/${id}`)
     
-
     const getPost = async () => {
       try {
         const { data } = await axios.get(`/api/posts/${id}`)
@@ -45,11 +42,11 @@ const EditPost = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log('Changes submitted!')
+    // console.log('Changes submitted!')
     try {
       const { data } = await axios.put(`/api/posts/${id}`, formFields, setHeaders())
-      console.log('Response Data --> ', data)
-      navigate(`/api/posts/${id}`)
+      // console.log('Response Data --> ', data)
+      navigate(`/posts/${id}`)
     } catch (error) {
       console.log(error)
     }
