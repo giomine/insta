@@ -95,17 +95,23 @@ const SinglePost = () => {
 
             <div className='block2-mid'>
               <h4>Comments</h4>
-              {posts.comments.map(comment => {
-                const { text, owner, createdAt } = comment
-                // console.log(owner.username, text, createdAt)
-                return (
-                  <div key={posts.id} className='comment'>
-                    <div className='single-post-username'><div className='profile-picture'></div><>{owner.username}</></div>
-                    <div>{text}</div>
-                    <div>{createdAt}</div>
-                  </div>
-                )
-              })}
+              {posts.comments.length > 0 ?
+                <>
+                  {posts.comments.map(comment => {
+                    const { text, owner, createdAt } = comment
+                    // console.log(owner.username, text, createdAt)
+                    return (
+                      <div key={posts.id} className='comment'>
+                        <div className='single-post-username'><div className='profile-picture'></div><>{owner.username}</></div>
+                        <div>{text}</div>
+                        <div>{createdAt}</div>
+                      </div>
+                    )
+                  })}
+                </>
+                :
+                <>Be the first to comment!</>
+              }
             </div>
 
             <div className='block2-bottom'>
