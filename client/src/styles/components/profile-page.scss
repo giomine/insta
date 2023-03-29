@@ -16,6 +16,10 @@
     background-color: rgb(177, 174, 174);
     border-radius: 50%;
     margin-right: 20px;
+    @media (max-width: 350px){
+      height: 70px;
+      width: 70px;
+    }
   }
 
   .profile-right{
@@ -35,6 +39,10 @@
     button{
       @include buttons();
       padding: 5px;
+      @media (max-width: 350px){
+        font-size: 0.8rem;
+        width: 120px;
+      }
     }
   }
 }
@@ -62,20 +70,20 @@
   max-width: 908px;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2px;
-  .post-image{
+  .post-image, .post-card{
     width: 33vw;
     height: 33vw;
   }
   .username, .caption{
-    width: 33vw;
-    max-width: 300px;
+    // width: 33vw;
+    // max-width: 300px;
     display: none;
   }
   .post-image, .post-card{
     max-width: 300px;
     max-height: 300px;
-    &:not(.post-card){
-      max-height: 300px;
-    }
+    // &:not(.post-card){
+    //   max-height: 300px;
+    // }
   }
 }

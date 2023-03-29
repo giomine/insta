@@ -18,6 +18,7 @@ import Register from './components/auth/Register.js'
 // import Error from './components/common/Error.js'
 import PageNavbar from './components/common/PageNavbar.js'
 import PageNotFound from './components/common/PageNotFound.js'
+import OtherProfiles from './components/OtherProfiles.js'
 // import Spinner from './components/common/Spinner.js'
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile/:id" element={<OtherProfiles />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
