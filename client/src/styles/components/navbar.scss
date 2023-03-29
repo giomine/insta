@@ -1,5 +1,6 @@
 @import '../global/variables.scss';
 
 .navbar {
-  border: $border;
+  width: 100vw;
+  border-bottom: 1px solid rgb(177, 174, 174);
 }

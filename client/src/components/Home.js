@@ -27,12 +27,12 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home Page</h1>
+      {/* <h1>Home Page</h1> */}
       <div className='homepage'>
         {posts.length > 0 ?
           posts.map(post => {
-            const { _id, caption, image, owner } = post
-            // console.log(_id, caption, image, owner.username)
+            const { _id, caption, image, owner, comments } = post
+            // console.log(_id, caption, image, owner.username, comments[0])
             return (
               <Link key={_id} to={`/posts/${_id}`}>
                 <DisplayPosts 
@@ -42,6 +42,26 @@ const Home = () => {
                   image={image}
                   caption={caption}
                 />
+                <div className='home-comments'>
+                  {comments.length > 0 ? 
+                    (
+                      <>
+                        <div className='home-comments-left'>Comments</div>
+                        <div className='home-comments-right'>
+                          <>{comments[0].owner.username}</> {/*!! this is the owner of the post, not the owner of the comment !!*/}
+                          <>{comments[0].text}</>
+                          <>{comments[0].createdAt}</>
+                        </div>
+                      </>
+                    )
+                    :                       <>
+                      <div className='home-comments-left'>Comments</div>
+                      <div className='home-comments-right'>
+                        <>Be the first to comment!</>
+                      </div>
+                    </>
+                  }
+                </div>
               </Link>
             )
           })

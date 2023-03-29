@@ -3,7 +3,6 @@
 .single-post-page{
   @include flex-center();
   min-height: 70vh;
-  // flex-direction: column;
 
   .caption, .username{
     display: none;
@@ -13,6 +12,8 @@
     @include flex-center();
     flex-direction: column;
     @media (min-width: 660px){
+      max-width: 1000px;
+      max-height: 500px;
       flex-direction: row;
       align-items: flex-start;
     }
@@ -20,52 +21,96 @@
 
   .block1{
     @media (min-width: 660px){
-      max-width: 300px;
-      max-height: 300px;
+      height: 40vw;
+      width: 40vw;
+    }
+    .post-image{
+      max-width: 500px;
+      max-height: 500px;
     }
   }
 
   .block2{
-    height: 50vw;
-    border: $border;
+    font-size: $text;
+    width: 100vw;
+    max-width: 500px;
+    max-height: 500px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     @media (min-width: 660px){
-      // height: 30vh;
-      max-width: 300px;
-      max-height: 300px;
+      padding: 10px 10px 0;
     }
   }
 
   .block2-top{
-    // max-height: 20%;
-    border-bottom: 1px solid gray;
+    max-height: 60%;
+    .single-post-caption{
+      max-height: 90px;
+      overflow: scroll;
+      margin: 10px 0;
+    }
+  }
+
+  .single-post-username{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    .two {
+      text-align: end;
+    }
+    button{
+      @include buttons();
+      width: 50px;
+      padding: 2px;
+      margin: 0 2px;
+      @media (max-width: 660px){
+        width: 80px;
+      }
+      @media (min-width: 850px){
+        padding: 5px;
+        width: 80px;
+      }
+    }
+    .profile-picture{
+      margin-left: 0;
+    }
   }
 
   .block2-mid{
-    height: 200px;
     width: 100vw;
+    height: 25vh;
     overflow: scroll;
-    // padding: 10px;
-    // flex-direction: column;
+    margin: 10px 0;
     @media (min-width: 660px){
-      width: 300px;
-      height: 60%;
+      // width: 300px;
+      width: 100%;
+      height: 50vh;
+      
     }
   }
 
   .block2-bottom{
-    // height: 20%;
-    border-top: 1px solid gray;
+    input{
+      @include inputs();
+      width: 100%;
+      margin: 0;
+    }
   }
 
   .comment{
-    padding: 10px 0;
+    padding: 5px 0;
+    .profile-picture{
+      width: 25px;
+      height: 25px;
+    }
   }
 
-  // @media (min-width: 660px){
-  //   .block2, .post-image{
-  //     height: 35vw;
-  //     width: 35vw;
-  //   }
-  // }
+  @media (min-width: 660px){
+    .post-image, .block2{
+      width: 40vw;
+      height: 40vw;
+    }
+  }
 }
