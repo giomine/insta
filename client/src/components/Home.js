@@ -54,13 +54,14 @@ const Home = () => {
           posts.map(post => {
             const { _id, caption, image, owner, comments } = post
             // console.log(_id, caption, image, owner.username, comments[0])
-            // console.log(owner.username)
+            console.log(owner.profilePhoto)
             {user === owner.username ? linkUrl = '/profile' : linkUrl = `/profile/${owner.id}`}
             return (
               <div key={_id}>
                 <DisplayPosts 
                   // key={_id}
                   _id={_id}
+                  profile={owner.profilePhoto}
                   userId={owner.id}
                   link={linkUrl}
                   username={owner.username}

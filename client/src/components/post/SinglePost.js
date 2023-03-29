@@ -114,7 +114,7 @@ const SinglePost = () => {
             <div className='block2-top'>
               <div className='single-post-username'>
                 <div className='single-post-username'>
-                  <div className='profile-picture'></div>
+                  <div style={{ backgroundImage: `url('${posts.owner.profilePhoto}')` }} className='profile-picture'></div>
                   <Link to={linkUrl}>
                     <h4>{posts.owner.username}</h4>
                   </Link>  

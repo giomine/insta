@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 
-const DisplayPosts = ({ _id, userId, link, username, caption, image }) => {
+const DisplayPosts = ({ _id, profile, userId, link, username, caption, image }) => {
 
 
   return (
     <>
       <div className='post-card' key={_id}>
         <div className='username'>
-          <div className='profile-picture'></div>
+          <div style={{ backgroundImage: `url('${profile}')` }} className='profile-picture'></div>
           <Link to={link}>
             <h4>{username}</h4>
           </Link>
