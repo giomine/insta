@@ -140,7 +140,7 @@ const SinglePost = () => {
                     // console.log(owner.username, text, createdAt)
                     return (
                       <div key={posts.id} className='comment'>
-                        <div className='single-post-username'><div className='profile-picture'></div><>{owner.username}</></div>
+                        <div className='single-post-username'><div style={{ backgroundImage: `url('${owner.profilePhoto}')` }}  className='profile-picture'></div><>{owner.username}</></div>
                         <div>{text}</div>
                         <div>{createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
                       </div>
