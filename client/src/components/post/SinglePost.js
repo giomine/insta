@@ -44,7 +44,7 @@ const SinglePost = () => {
         },
       })
       console.log('DELETING')
-      navigate('/posts')
+      navigate('/profile')
     } catch (err) {
       console.log('errory', err)
     }
