@@ -75,6 +75,9 @@
     }
     .profile-picture{
       margin-left: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 
@@ -104,6 +107,9 @@
     .profile-picture{
       width: 25px;
       height: 25px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 
