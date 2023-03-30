@@ -37,8 +37,9 @@ const Home = () => {
       try {
         // setTimeout(async () => {
         const response = await axios.get('/api/posts')
-        console.log(response.data)
-        setPosts(response.data)
+        // console.log(response.data)
+        const postData = response.data.reverse()
+        setPosts(postData)
         // }, 50000)
       } catch (err) {
         setError(err)
