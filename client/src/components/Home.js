@@ -25,7 +25,7 @@ const Home = () => {
         // console.log(response.headers)
 
       } catch (err){
-        console.log(err)
+        setError(err)
         // setError(err)
       }
     }
@@ -35,11 +35,13 @@ const Home = () => {
   useEffect(() => {
     const getPosts = async () => {
       try {
+        // setTimeout(async () => {
         const response = await axios.get('/api/posts')
         console.log(response.data)
         setPosts(response.data)
+        // }, 50000)
       } catch (err) {
-        setError(error)
+        setError(err)
       }
     }
     getPosts()
@@ -54,13 +56,14 @@ const Home = () => {
           posts.map(post => {
             const { _id, caption, image, owner, comments } = post
             // console.log(_id, caption, image, owner.username, comments[0])
-            // console.log(owner.username)
+            console.log(owner.profilePhoto)
             {user === owner.username ? linkUrl = '/profile' : linkUrl = `/profile/${owner.id}`}
             return (
               <div key={_id}>
                 <DisplayPosts 
                   // key={_id}
                   _id={_id}
+                  profile={owner.profilePhoto}
                   userId={owner.id}
                   link={linkUrl}
                   username={owner.username}
@@ -94,7 +97,7 @@ const Home = () => {
           : 
           <>
             { error ? 
-              <p>{error}</p>
+              <p>{<p className='text-center'>{error.message}</p>}</p>
               :
               <SpinnerComponent/>}
           </> 

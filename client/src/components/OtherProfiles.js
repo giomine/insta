@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import DisplayPosts from './post/DisplayPosts'
 import axios from 'axios'
+import SpinnerComponent from './common/Spinner.js'
 
 const OtherProfiles = () => {
 
@@ -35,7 +36,7 @@ const OtherProfiles = () => {
         
           <> 
             <div className='profile-top'>
-              <div className='profile-picture'></div>
+              <div style={{ backgroundImage: `url('${userInfo.profilePhoto}')` }} className='profile-picture'></div>
               <div className='profile-right'>
                 <div className='profile-username'>{userInfo.username}</div>
                 {/* <div className='bio' onClick={handleBio}>{bio}</div> */}
@@ -71,8 +72,12 @@ const OtherProfiles = () => {
           </>
           : 
           <>
-            <p>User not found</p>
-            {/* <SpinnerComponent/> */}
+            {
+              error ?
+                <p>User not found</p>
+                :
+                <SpinnerComponent />
+            }
           </> 
         }
       </>

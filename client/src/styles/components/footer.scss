@@ -1,0 +1,20 @@
+@import '../global/variables.scss';
+
+.footer-container{
+  font-size: 0.8rem;
+  color: $placeholderText;
+  width: 100vw;
+  padding: 30px 10px 20px;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  .footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  .item {
+    margin: 0 10px;
+  }
+}

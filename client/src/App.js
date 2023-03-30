@@ -19,6 +19,7 @@ import Register from './components/auth/Register.js'
 import PageNavbar from './components/common/PageNavbar.js'
 import PageNotFound from './components/common/PageNotFound.js'
 import OtherProfiles from './components/OtherProfiles.js'
+import Footer from './components/common/Footer.js'
 // import Spinner from './components/common/Spinner.js'
 
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
   // })
 
   return (
-    <div className='container'>
+    <div className='main-container'>
       <BrowserRouter>
         <PageNavbar/>
         <Routes>
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/profile/:id" element={<OtherProfiles />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   )

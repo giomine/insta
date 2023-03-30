@@ -43,7 +43,7 @@ const Profile = () => {
         // console.log(response.data)
         setUserInfo(response.data)
         console.log(response.data)
-        // }, 5000)
+        // }, 50000)
 
       } catch (err){
         setError(err)
@@ -61,7 +61,7 @@ const Profile = () => {
         
           <> 
             <div className='profile-top'>
-              <div className='profile-picture'></div>
+              <div style={{ backgroundImage: `url('${userInfo.profilePhoto}')` }} className='profile-picture'></div>
               <div className='profile-right'>
                 <div className='profile-username'>{userInfo.username}</div>
                 {/* <div className='bio' onClick={handleBio}>{bio}</div> */}
@@ -91,10 +91,12 @@ const Profile = () => {
                   )
                 })
                 :
-
                 <>
-                  <p>No posts yet!</p>
-                </> 
+                  <div></div> {/* this pushes the message into the center because there are three columns in the grid */}
+                  <>
+                    <p>No posts yet!</p>
+                  </> 
+                </>
 
               }
             </div>

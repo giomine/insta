@@ -24,18 +24,16 @@ const EditPost = () => {
   //!On Mount
   useEffect(() => {
 
-    // console.log('!isAuthenticated() || !userIsOwner(posts)', !isAuthenticated() || !userIsOwner(posts) )
-    // ((!isAuthenticated()) && navigate(`/posts/${id}`))
     // (!isAuthenticated() || !userIsOwner(posts)) && navigate(`/posts/${id}`)
     
-
     const getPost = async () => {
       try {
         const { data } = await axios.get(`/api/posts/${id}`)
         setFormFields(data)
         setPosts(data)
+        console.log(data.image)
       } catch (error) {
-        console.log(error)
+        setError(error)
       }
     }
     getPost()
@@ -45,13 +43,13 @@ const EditPost = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log('Changes submitted!')
+    // console.log('Changes submitted!')
     try {
       const { data } = await axios.put(`/api/posts/${id}`, formFields, setHeaders())
-      console.log('Response Data --> ', data)
-      navigate(`/api/posts/${id}`)
+      // console.log('Response Data --> ', data)
+      navigate(`/posts/${id}`)
     } catch (error) {
-      console.log(error)
+      setError(error)
     }
   }
 
@@ -64,14 +62,18 @@ const EditPost = () => {
   return (
     <>
       {posts && isAuthenticated() && userIsOwner(posts) ?
-        <main className="form-page">
+        <main className="form-container">
           <div className="form-border">
             <form action="" onSubmit={handleSubmit}>
-              <h1>Edit Post</h1>
-              <label htmlFor="caption"></label>
-              <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
+              <h2>Edit post</h2>
+              <div style={{ backgroundImage: `url('${posts.image}')` }} className='profile-picture'></div>
+              {/* <label htmlFor="caption"></label>
+              <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} /> */}
+              <label htmlFor="caption">
+                <textarea name='caption' cols="21" rows="2" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
+              </label>
               <button type="submit">Submit</button>
-              { error ? <p>{error}</p> : '' }
+              {error && <p className='text-center'>{error}</p>}
             </form>
           </div>
         </main>

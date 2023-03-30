@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { isAuthenticated, getToken, userIsOwner } from '../../helpers/auth'
 import DisplayPosts from './DisplayPosts'
+import SpinnerComponent from '../common/Spinner'
 
 
 const SinglePost = () => {
@@ -13,6 +14,7 @@ const SinglePost = () => {
   const [posts, setPosts] = useState(null)
   const [ user, setUser ] = useState(null)
   const [ linkUrl, setLinkUrl ] = useState()
+  const [error, setError ] = useState('')
 
   const [formFields, setFormFields] = useState({  //! maybe rename to comment field if thats what this is? 
     text: '',
@@ -32,8 +34,9 @@ const SinglePost = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
+      formFields.text = ''
     } catch (err) {
-      console.log(err)
+      setError(err)
     }
   }
 
@@ -47,7 +50,7 @@ const SinglePost = () => {
       console.log('DELETING')
       navigate('/profile')
     } catch (err) {
-      console.log('errory', err)
+      setError(err)
     }
   }
 
@@ -59,7 +62,7 @@ const SinglePost = () => {
       // linkUrl = (user === posts.owner.username) ? '/profile' : `/profile/${posts.owner.id}`
       setLinkUrl((user === posts.owner.username) ? '/profile' : `/profile/${posts.owner.id}`)
     } catch (err) {
-      console.log(err)
+      setError(err)
     }
   }
 
@@ -71,7 +74,7 @@ const SinglePost = () => {
         setPosts(data)
         getLink()
       } catch (err) {
-        console.log(err)
+        setError(err)
       }
     }
     getPost()
@@ -89,7 +92,7 @@ const SinglePost = () => {
         // console.log('user --->', data.username)
         setUser(data.username)
       } catch (err){
-        console.log(err)
+        setError(err)
         // setError(err)
       }
     }
@@ -114,7 +117,7 @@ const SinglePost = () => {
             <div className='block2-top'>
               <div className='single-post-username'>
                 <div className='single-post-username'>
-                  <div className='profile-picture'></div>
+                  <div style={{ backgroundImage: `url('${posts.owner.profilePhoto}')` }} className='profile-picture'></div>
                   <Link to={linkUrl}>
                     <h4>{posts.owner.username}</h4>
                   </Link>  
@@ -140,7 +143,7 @@ const SinglePost = () => {
                     // console.log(owner.username, text, createdAt)
                     return (
                       <div key={posts.id} className='comment'>
-                        <div className='single-post-username'><div className='profile-picture'></div><>{owner.username}</></div>
+                        <div className='single-post-username'><div style={{ backgroundImage: `url('${owner.profilePhoto}')` }}  className='profile-picture'></div><>{owner.username}</></div>
                         <div>{text}</div>
                         <div>{createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
                       </div>
@@ -168,7 +171,16 @@ const SinglePost = () => {
             </div>
           </div>
         </div>
-        : <p>error</p>
+        : 
+        <>
+          {
+            error ?
+              // <p className='text-center'>{error.message}</p>
+              <p className='text-center'>Post not found</p>
+              :
+              <SpinnerComponent />
+          }
+        </>
       }
     </main>
 
