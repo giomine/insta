@@ -34,7 +34,7 @@ const CreatePost = () => {
       console.log(response)
       navigate('/')
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       setError('Please fill both fields and make sure you are logged in to create a post :)')
     }
   }
@@ -60,7 +60,7 @@ const CreatePost = () => {
           <input type="text" name="image" placeholder="image upload will go here" value={formFields.image} onChange={handleChange} /> */}
           
           <button type="submit">Post</button>
-          { error ? <p>{error}</p> : '' }
+          {error && <p className='text-center'>{error}</p>}
         </form>
       </div>
     </div>

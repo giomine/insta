@@ -25,7 +25,7 @@ const Home = () => {
         // console.log(response.headers)
 
       } catch (err){
-        console.log(err)
+        setError(err)
         // setError(err)
       }
     }
@@ -39,7 +39,7 @@ const Home = () => {
         console.log(response.data)
         setPosts(response.data)
       } catch (err) {
-        setError(error)
+        setError(err)
       }
     }
     getPosts()
@@ -95,7 +95,7 @@ const Home = () => {
           : 
           <>
             { error ? 
-              <p>{error}</p>
+              <p>{error && <p className='text-center'>{error.message}</p>}</p>
               :
               <SpinnerComponent/>}
           </> 
