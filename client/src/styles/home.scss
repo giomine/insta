@@ -11,6 +11,8 @@ a {
   justify-content: space-between;
   gap: 5px;
   padding-top: 30px;
+  @media (min-width: 660px){
+  }
   
 
   .post-card{
@@ -42,7 +44,7 @@ a {
     padding: 0 10px;
     max-height: 70px;
     overflow: scroll;
-    margin: 10px 0;
+    margin: 10px 0 0;
   }
   
   .username {
@@ -51,7 +53,7 @@ a {
 
   .caption{
     padding: 5px 0;
-    max-height: 40px;
+    height: 45px;
   }
 
   .username{
@@ -62,20 +64,36 @@ a {
   }
 
   .caption{
-    overflow: scroll;
+    overflow: hidden;
   }
 
   .home-comments{
     @include flex-center();
+    justify-content: flex-start;
     align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: column;
     font-size: $text;
-    padding: 0 10px 30px;
-    height: 20px;
-    overflow: scroll;
+    margin: 0 10px 15px;
+    height: 60px;
+    overflow: hidden;
     .home-comments-left{
       font-weight: bold;
       margin-right: 5px;
+    }
+    // .home-comments-right{
+    //   @media (min-width: 660px) and (max-width: 750px){
+    //     font-size: 12px;
+    //   }
+    // }
+    .comments-container{
+      display: flex;
+      flex-wrap: wrap;
+      div{
+        margin-right: 5px;
+        &:first-child{
+          font-weight: 500;
+        }
+      }
     }
   }
 
@@ -109,11 +127,11 @@ a {
   }
 }
 
-@media (min-width: 660px) and (max-width: 750px ){
-  .home-comments-right {
-    max-width: 80px;
-  }
-}
+// @media (min-width: 660px) and (max-width: 750px ){
+//   .home-comments-right {
+//     max-width: 80px;
+//   }
+// }
 
 // Swap the above media query for this one if you want column instead of grid THIS PROBABLY doesn't work now i made a lot of changes
 // @media (min-width: 660px){
