@@ -1,5 +1,6 @@
 import DisplayPosts from './post/DisplayPosts.js'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import SpinnerComponent from './common/Spinner.js'
 import { getToken } from '../helpers/auth.js'
@@ -71,32 +72,34 @@ const Home = () => {
                   caption={caption}
                 />
                 <div className='home-comments'>
-                  {comments.length > 0 ? 
-                    (
-                      <>
-                        <div className='home-comments-left'>Comments</div>
-                        <div className='home-comments-right'>
-                          <div className='comments-container'>
-                            <div className='home-comments-username'>
-                              <div style={{ backgroundImage: `url('${comments[0].owner.profilePhoto}')` }}  className='profile-picture'></div>
-                              <div>{comments[0].owner.username}</div>
-                            </div>
-                            <div className='home-comments-margin'>
-                              <div className='text'>{comments[0].text}</div>
-                              <div>{comments[0].createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
+                  <Link to={`/posts/${_id}`}>
+                    {comments.length > 0 ? 
+                      (
+                        <>
+                          <div className='home-comments-left'>Comments</div>
+                          <div className='home-comments-right'>
+                            <div className='comments-container'>
+                              <div className='home-comments-username'>
+                                <div style={{ backgroundImage: `url('${comments[0].owner.profilePhoto}')` }}  className='profile-picture'></div>
+                                <div>{comments[0].owner.username}</div>
+                              </div>
+                              <div className='home-comments-margin'>
+                                <div className='text'>{comments[0].text}</div>
+                                <div>{comments[0].createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
+                              </div>
                             </div>
                           </div>
+                        </>
+                      )
+                      :                       
+                      <>
+                        <div className='home-comments-left'>Comments</div>
+                        <div className='home-comments-right'> {/* //! add ternary log in to comment */}
+                          <>Be the first to comment!</>
                         </div>
                       </>
-                    )
-                    :                       
-                    <>
-                      <div className='home-comments-left'>Comments</div>
-                      <div className='home-comments-right'> {/* //! add ternary log in to comment */}
-                        <>Be the first to comment!</>
-                      </div>
-                    </>
-                  }
+                    }
+                  </Link>
                 </div>
               </div>
             )
