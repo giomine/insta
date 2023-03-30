@@ -76,9 +76,11 @@ const Home = () => {
                       <>
                         <div className='home-comments-left'>Comments</div>
                         <div className='home-comments-right'>
-                          <>{comments[0].owner.username}</>
-                          <>{comments[0].text}</>
-                          <>{comments[0].createdAt.slice(0, 10).split('-').reverse().join('-')}</>
+                          <div className='comments-container'>
+                            <div>{comments[0].owner.username}</div>
+                            <div>{comments[0].text}</div>
+                            <div>{comments[0].createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
+                          </div>
                         </div>
                       </>
                     )
