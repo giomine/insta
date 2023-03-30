@@ -76,15 +76,13 @@ a {
     margin: 0 10px 15px;
     height: 70px;
     overflow: hidden;
+    .home-comments-username{
+      display: flex;
+      width: 100%;
+    }
     .home-comments-left{
       font-weight: bold;
-      margin-right: 5px;
     }
-    // .home-comments-right{
-    //   @media (min-width: 660px) and (max-width: 750px){
-    //     font-size: 12px;
-    //   }
-    // }
     .comments-container{
       display: flex;
       align-items: center;
@@ -95,13 +93,19 @@ a {
         height: 25px;
         margin-right: 5px;
       }
-      div{
-        margin-left: 5px;
+      div {
         &:first-child{
           font-weight: 500;
         }
-        &:nth-child(3){
-          margin-left: 40px;
+      }
+      .home-comments-margin{
+        display: flex;
+        flex-direction: column;
+        margin-left: 35px;
+        margin-top: -5px;
+        .text{
+          margin-right: 5px;
+          font-weight: normal;
         }
       }
     }
@@ -137,11 +141,6 @@ a {
   }
 }
 
-// @media (min-width: 660px) and (max-width: 750px ){
-//   .home-comments-right {
-//     max-width: 80px;
-//   }
-// }
 
 // Swap the above media query for this one if you want column instead of grid THIS PROBABLY doesn't work now i made a lot of changes
 // @media (min-width: 660px){

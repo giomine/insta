@@ -77,10 +77,14 @@ const Home = () => {
                         <div className='home-comments-left'>Comments</div>
                         <div className='home-comments-right'>
                           <div className='comments-container'>
-                            <div style={{ backgroundImage: `url('${comments[0].owner.profilePhoto}')` }}  className='profile-picture'></div>
-                            <div>{comments[0].owner.username}</div>
-                            <div>{comments[0].text}</div>
-                            <div>{comments[0].createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
+                            <div className='home-comments-username'>
+                              <div style={{ backgroundImage: `url('${comments[0].owner.profilePhoto}')` }}  className='profile-picture'></div>
+                              <div>{comments[0].owner.username}</div>
+                            </div>
+                            <div className='home-comments-margin'>
+                              <div className='text'>{comments[0].text}</div>
+                              <div>{comments[0].createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
+                            </div>
                           </div>
                         </div>
                       </>
@@ -88,7 +92,7 @@ const Home = () => {
                     :                       
                     <>
                       <div className='home-comments-left'>Comments</div>
-                      <div className='home-comments-right'>
+                      <div className='home-comments-right'> {/* //! add ternary log in to comment */}
                         <>Be the first to comment!</>
                       </div>
                     </>
