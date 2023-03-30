@@ -1,0 +1,6 @@
+@import './variables.scss';
+
+.page-not-found{
+  height: 70vh;
+  @include flex-center();
+}
