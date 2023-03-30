@@ -10,8 +10,8 @@ a {
   grid-template-columns: 1fr;
   justify-content: space-between;
   gap: 5px;
-  // padding-top: 30px;
   @media (min-width: 660px){
+    padding-top: 30px;
   }
   
 

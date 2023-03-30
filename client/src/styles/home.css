@@ -9,7 +9,11 @@ a {
   grid-template-columns: 1fr;
   justify-content: space-between;
   gap: 5px;
-  padding-top: 30px;
+}
+@media (min-width: 660px) {
+  .homepage {
+    padding-top: 30px;
+  }
 }
 .homepage .post-card {
   border-radius: 3px;
@@ -23,6 +27,9 @@ a {
   background-color: rgb(177, 174, 174);
   border-radius: 50%;
   margin: 0 10px 0 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .homepage .post-image {
   width: 100vw;
@@ -35,13 +42,14 @@ a {
   padding: 0 10px;
   max-height: 70px;
   overflow: scroll;
-  margin: 10px 0;
+  margin: 10px 0 0;
 }
 .homepage .username {
   padding: 10px 0;
 }
 .homepage .caption {
   padding: 5px 0;
+  height: 45px;
 }
 .homepage .username {
   font-weight: bold;
@@ -52,28 +60,56 @@ a {
   justify-content: flex-start;
 }
 .homepage .caption {
-  overflow: scroll;
+  overflow: hidden;
 }
 .homepage .home-comments {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
   font-size: 0.9rem;
-  padding: 0 10px 30px;
-  height: 20px;
-  overflow: scroll;
+  margin: 0 10px 15px;
+  height: 70px;
+  overflow: hidden;
+}
+.homepage .home-comments .home-comments-username {
+  display: flex;
+  width: 100%;
 }
 .homepage .home-comments .home-comments-left {
   font-weight: bold;
+}
+.homepage .home-comments .comments-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+.homepage .home-comments .comments-container .profile-picture {
+  width: 25px;
+  height: 25px;
   margin-right: 5px;
+}
+.homepage .home-comments .comments-container div:first-child {
+  font-weight: 500;
+}
+.homepage .home-comments .comments-container .home-comments-margin {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  margin-top: -5px;
+}
+.homepage .home-comments .comments-container .home-comments-margin .text {
+  margin-right: 5px;
+  font-weight: normal;
 }
 .homepage .spinner {
   position: fixed;
   top: 50%;
-  left: 50%;
-  translate: -50%, -50%;
+  width: 40vw;
+  left: 30vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,10 +130,5 @@ a {
   }
   .homepage .username, .homepage .caption {
     max-width: 300px;
-  }
-}
-@media (min-width: 660px) and (max-width: 750px) {
-  .home-comments-right {
-    max-width: 80px;
   }
 }/*# sourceMappingURL=home.css.map */
