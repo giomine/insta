@@ -11,29 +11,10 @@ const Profile = () => {
   const navigate = useNavigate()
 
   const [ userInfo, setUserInfo ] = useState()
-  const [ newBio, setNewBio ] = useState() //! Currently saves in state but no PUT route so doesn't update user profile. Uncomment line 62 if you want to display edited bio from localStorage.
   const [ error, setError ] = useState('')
 
   const handleClick = () => {
     navigate('/posts')
-  }
-
-  const handleChange = (e) => {
-    setNewBio( e.target.value )
-    console.log(e.target.value)
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      await axios.put(`/profile/${userInfo.id}`, newBio)
-      navigate(`/posts/${userInfo.id}`)
-    } catch (err) {
-      setError(error)
-    }
-    // userInfo.bio = newBio
-    // window.localStorage.setItem('newBio', newBio)
-    // console.log(userInfo)
   }
 
   useEffect(() => {
@@ -71,10 +52,9 @@ const Profile = () => {
               <div className='profile-right'>
                 <div className='profile-username'>{userInfo.username}</div>
                 {/* <div className='bio' onClick={handleBio}>{bio}</div> */}
-                <form action="" onSubmit={handleSubmit}>
-                  <input style={{ display: 'block', border: 'none', outline: 'none' }} type="text" name="bio" onChange={handleChange} value={newBio} placeholder={userInfo.bio ? userInfo.bio : 'Edit bio'} />
-                  {/* <input style={{ display: 'block', border: 'none', outline: 'none' }} type="text" name="bio" onChange={handleChange} value={newBio ? newBio : window.localStorage.getItem('newBio')} placeholder={userInfo.bio ? userInfo.bio : 'Edit bio'} /> */}
-                </form>
+                <Link to={`/profile/${userInfo.id}/edit`}>
+                  <div>{userInfo.bio ? userInfo.bio : 'Edit bio'}</div>
+                </Link>
                 
                 <button onClick={handleClick}>Create new post</button>
               </div>
@@ -98,7 +78,7 @@ const Profile = () => {
                 })
                 :
                 <>
-                  <div></div> {/* this pushes the message into the center because there are three columns in the grid */}
+                  <div></div> {/* //! this pushes the message into the center because there are three columns in the grid */}
                   <>
                     <p>No posts yet!</p>
                   </> 

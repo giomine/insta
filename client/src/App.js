@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home.js'
 import Profile from './components/Profile.js'
+import EditBio from './components/post/EditBio.js'
 import CreatePost from './components/post/CreatePost.js'
 import DeletePost from './components/post/DeletePost.js'
 // import DisplayPosts from './components/post/DisplayPosts.js'
@@ -37,6 +38,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:id/edit" element={<EditBio />} />
           <Route path="/posts" element={<CreatePost />} />
           <Route path="/posts/:id" element={<SinglePost />} />
           <Route path="/posts/:id" element={<DeletePost />} />

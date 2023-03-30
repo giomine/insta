@@ -3,7 +3,7 @@ const router = express.Router()
 import { getPosts, getSinglePost, createPost, editPost, deletedPost, getEditPage } from '../controllers/posts.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
-import { profileView, otherUserProfile } from '../controllers/users.js'
+import { profileView, otherUserProfile, editBio } from '../controllers/users.js'
 import { addComment, deleteComment } from '../controllers/comments.js'
 
 router.route('/posts')
@@ -32,10 +32,12 @@ router.route('/posts/:postId/comments/:commentId')
 
 router.route('/profile')
   .get(secureRoute, profileView)
-  .put()
 
 router.route('/profile/:id')
   .get(otherUserProfile)
+
+router.route('/profile/:id/edit')
+  .put(editBio)
 
 export default router
 
