@@ -35,9 +35,11 @@ const Home = () => {
   useEffect(() => {
     const getPosts = async () => {
       try {
+        // setTimeout(async () => {
         const response = await axios.get('/api/posts')
         console.log(response.data)
         setPosts(response.data)
+        // }, 50000)
       } catch (err) {
         setError(error)
       }
