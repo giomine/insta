@@ -28,7 +28,7 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/57e2d54a4c5bad14f1dc8460962e33791c3ad6e04e507440742f7cd7914dc7_640.jpg',
   },
   {
-    caption: 'Im so quirky omg',
+    caption: 'I\'m so quirky omg',
     image: 'https://randomwordgenerator.com/img/picture-generator/5ee0d3454a56b10ff3d8992cc12c30771037dbf85257714d742d7ed5964b_640.jpg',
   },
   {
@@ -172,7 +172,7 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/57e2d54b4b5aa414f1dc8460962e33791c3ad6e04e5074417c2c7fd59044c1_640.jpg',
   },
   {
-    caption: 'Sniff sniff, smells like b*tch in here',
+    caption: 'Sniff sniff, smells like beech in here',
     image: 'https://randomwordgenerator.com/img/picture-generator/57e3d04b4d57a414f1dc8460962e33791c3ad6e04e507440762a7cd6954cc2_640.jpg',
   },
   {
@@ -224,7 +224,7 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/57e3d3444d51ac14f1dc8460962e33791c3ad6e04e507440752f78d0974cc2_640.jpg',
   },
   {
-    caption: 'When you push your mum too far in public and she gives that look',
+    caption: 'When you push your mum too far in public and she gives you that look',
     image: 'https://randomwordgenerator.com/img/picture-generator/horses-1348383_640.jpg',
   },
   {
@@ -244,10 +244,6 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/52e4dd4b4f57ae14f1dc8460962e33791c3ad6e04e50744172287edc9445c4_640.jpg',
   },
   {
-    caption: 'You\'re in the wrong neighbourhood buster',
-    image: 'https://randomwordgenerator.com/img/picture-generator/52e4dd4b4f57ae14f1dc8460962e33791c3ad6e04e50744172287edc9445c4_640.jpg',
-  },
-  {
     caption: 'Looks like she has a tiny arm lol',
     image: 'https://randomwordgenerator.com/img/picture-generator/53e3d3434c56a414f1dc8460962e33791c3ad6e04e507749742c78d69f4fcc_640.jpg',
   },
@@ -256,11 +252,11 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/53e2d6414a56a914f1dc8460962e33791c3ad6e04e50744074267ad09045c2_640.jpg',
   },
   {
-    caption: 'So beautiful seeing workman trees in the wild like this',
+    caption: 'Isn\'t nature beautiful? Nothing but Workman Trees as far as the eye can see',
     image: 'https://randomwordgenerator.com/img/picture-generator/50e5dc4b4251b10ff3d8992cc12c30771037dbf85257714b752c79dd954b_640.jpg',
   },
   {
-    caption: 'It\'s a strong look, I\'ll give that to her',
+    caption: 'It\'s a strong look, I\'ll give her that',
     image: 'https://randomwordgenerator.com/img/picture-generator/woman-with-gold-chain-on-neck-standing-near-hut-3495488.jpg',
   },
   {
@@ -314,10 +310,6 @@ export default [
   {
     caption: 'Due to budgetary cutbacks, the Russain army can now only afford finger guns - pew pew',
     image: 'https://randomwordgenerator.com/img/picture-generator/54e2d2404c5baa14f1dc8460962e33791c3ad6e04e507440762e79d79649c7_640.jpg',
-  },
-  {
-    caption: 'Due to budguns - pew pew',
-    image: 'https://randomwordgen33791c3ad6e04e507440762e79d79649c7_640.jpg',
   },
   {
     caption: 'Sailing',
