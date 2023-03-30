@@ -15,11 +15,12 @@ const PageNavbar = () => {
     <Navbar collapseOnSelect expand="md">
       <Container>
         <Navbar.Brand to="/" as={Link}>
-          <img 
+          Instasham
+          {/* <img 
             src="https://newbuildings.org/wp-content/uploads/2015/03/client-logo.png"
             alt = "logo"
             width ="100px"
-          />
+          /> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="app-nav" />
         <Navbar.Collapse id="app-nav" className="justify-content-end">
