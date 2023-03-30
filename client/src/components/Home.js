@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import SpinnerComponent from './common/Spinner.js'
-import { getToken } from '../helpers/auth.js'
+import { getToken, isAuthenticated } from '../helpers/auth.js'
 
 const Home = () => {
 
@@ -96,7 +96,11 @@ const Home = () => {
                       <>
                         <div className='home-comments-left'>Comments</div>
                         <div className='home-comments-right'> {/* //! add ternary log in to comment */}
-                          <>Be the first to comment!</>
+                          { isAuthenticated() ? 
+                            <>Be the first to comment!</>
+                            :
+                            <p className='log-in-to-comment'>Please log in to leave a comment</p>
+                          }
                         </div>
                       </>
                     }

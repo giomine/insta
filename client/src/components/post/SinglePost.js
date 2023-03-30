@@ -154,25 +154,34 @@ const SinglePost = () => {
                     })}
                   </>
                   :
-                  <>Be the first to comment!</>
+                  <>
+                    { isAuthenticated() &&
+                      <p>Be the first to comment!</p> 
+                    }
+                  </>
                 }
               </div>
               {/* </div> */}
 
-              <div className='block2-bottom'>
-                <form onSubmit={handleSubmit}>
-                  <input type="text" name="text" placeholder={`Leave a comment for ${posts.owner.username}`} onChange={handleChange} value={formFields.text} />
-                </form>
-                {/* {isAuthenticated() && userIsOwner(posts) &&
-                  <>
-                    <Link to={`/api/posts/${id}/edit`}>
-                      <button>edit</button>
-                    </Link>
-                    <button onClick={handleDelete}>Delete</button>
-                  </>
+              { isAuthenticated() ?
+                <div className='block2-bottom'>
+                  <form onSubmit={handleSubmit}>
+                    <input type="text" name="text" placeholder={`Leave a comment for ${posts.owner.username}`} onChange={handleChange} value={formFields.text} />
+                  </form>
+                  
+                  {/* {isAuthenticated() && userIsOwner(posts) &&
+                    <>
+                      <Link to={`/api/posts/${id}/edit`}>
+                        <button>edit</button>
+                      </Link>
+                      <button onClick={handleDelete}>Delete</button>
+                    </>
 
-                } */}
-              </div>
+                  } */}
+                </div>
+                :
+                <p className='log-in-to-comment'>Please log in to leave a comment</p>
+              }
 
             </div>
           </div>
