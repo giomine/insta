@@ -75,7 +75,7 @@ const Home = () => {
                         <div className='home-comments-right'>
                           <>{comments[0].owner.username}</>
                           <>{comments[0].text}</>
-                          <>{comments[0].createdAt}</>
+                          <>{comments[0].createdAt.slice(0, 10).split('-').reverse().join('-')}</>
                         </div>
                       </>
                     )
