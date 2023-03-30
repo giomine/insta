@@ -43,7 +43,7 @@ const Profile = () => {
         // console.log(response.data)
         setUserInfo(response.data)
         console.log(response.data)
-        // }, 5000)
+        // }, 50000)
 
       } catch (err){
         setError(err)
