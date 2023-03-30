@@ -29,7 +29,7 @@ const Register = () => {
       // console.log(response.data.token)
       navigate('/login')
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       setError('Please fill all fields and if you already have an account log in instead')
     }
   }
@@ -52,7 +52,7 @@ const Register = () => {
           <label htmlFor="passwordConfirmation"></label>
           <input type="password" name="passwordConfirmation" placeholder='confirm password' onChange={handleChange} value={formFields.passwordConfirmation} />
           <button>Register</button>
-          { error ? <p>{error}</p> : '' }
+          {error && <p className='text-center'>{error}</p>}
         </form>
       </div>
     </div>

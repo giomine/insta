@@ -14,6 +14,7 @@ const SinglePost = () => {
   const [posts, setPosts] = useState(null)
   const [ user, setUser ] = useState(null)
   const [ linkUrl, setLinkUrl ] = useState()
+  const [error, setError ] = useState('')
 
   const [formFields, setFormFields] = useState({  //! maybe rename to comment field if thats what this is? 
     text: '',
@@ -35,7 +36,7 @@ const SinglePost = () => {
       })
       formFields.text = ''
     } catch (err) {
-      console.log(err)
+      setError(err)
     }
   }
 
@@ -49,7 +50,7 @@ const SinglePost = () => {
       console.log('DELETING')
       navigate('/profile')
     } catch (err) {
-      console.log('errory', err)
+      setError(err)
     }
   }
 
@@ -61,7 +62,7 @@ const SinglePost = () => {
       // linkUrl = (user === posts.owner.username) ? '/profile' : `/profile/${posts.owner.id}`
       setLinkUrl((user === posts.owner.username) ? '/profile' : `/profile/${posts.owner.id}`)
     } catch (err) {
-      console.log(err)
+      setError(err)
     }
   }
 
@@ -73,7 +74,7 @@ const SinglePost = () => {
         setPosts(data)
         getLink()
       } catch (err) {
-        console.log(err)
+        setError(err)
       }
     }
     getPost()
@@ -91,7 +92,7 @@ const SinglePost = () => {
         // console.log('user --->', data.username)
         setUser(data.username)
       } catch (err){
-        console.log(err)
+        setError(err)
         // setError(err)
       }
     }

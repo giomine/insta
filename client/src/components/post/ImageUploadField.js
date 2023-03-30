@@ -1,6 +1,10 @@
 import axios from 'axios'
+import { useState } from 'react'
 
 const ImageUploadField = ({ formFields, setFormFields }) => {
+
+  const [ error, setError ] = useState('')
+
   const handleUpload = async (e) => {
     const cloudName = 'duhpvaov2'
     const uploadPreset = 'insta_image'
@@ -16,7 +20,7 @@ const ImageUploadField = ({ formFields, setFormFields }) => {
       console.log(data)
       setFormFields({ ...formFields, image: data.secure_url })
     } catch (err) { 
-      console.log(err)
+      setError(err)
     }
   }
 
@@ -26,7 +30,9 @@ const ImageUploadField = ({ formFields, setFormFields }) => {
       { formFields.image ? 
         <img style={{ height: '200px' }} src={formFields.image} /> 
         : 
-        <input type="file" onChange={handleUpload}/>}
+        <input type="file" onChange={handleUpload}/>
+      }
+      {error && <p className='text-center'>{error}</p>}
     </div>
   )
 }

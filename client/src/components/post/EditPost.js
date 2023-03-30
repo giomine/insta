@@ -33,7 +33,7 @@ const EditPost = () => {
         setPosts(data)
         console.log(data.image)
       } catch (error) {
-        console.log(error)
+        setError(error)
       }
     }
     getPost()
@@ -49,7 +49,7 @@ const EditPost = () => {
       // console.log('Response Data --> ', data)
       navigate(`/posts/${id}`)
     } catch (error) {
-      console.log(error)
+      setError(error)
     }
   }
 
@@ -73,7 +73,7 @@ const EditPost = () => {
                 <textarea name='caption' cols="21" rows="2" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
               </label>
               <button type="submit">Submit</button>
-              { error ? <p>{error}</p> : '' }
+              {error && <p className='text-center'>{error}</p>}
             </form>
           </div>
         </main>
