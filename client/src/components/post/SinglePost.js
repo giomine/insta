@@ -144,8 +144,8 @@ const SinglePost = () => {
                     return (
                       <div key={posts.id} className='comment'>
                         <div className='single-post-username'><div style={{ backgroundImage: `url('${owner.profilePhoto}')` }}  className='profile-picture'></div><>{owner.username}</></div>
-                        <div>{text}</div>
-                        <div>{createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
+                        <div className='comment-margin'>{text}</div>
+                        <div className='comment-margin'>{createdAt.slice(0, 10).split('-').reverse().join('-')}</div>
                       </div>
                     )
                   })}

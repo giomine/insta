@@ -74,7 +74,7 @@ a {
     flex-direction: column;
     font-size: $text;
     margin: 0 10px 15px;
-    height: 60px;
+    height: 70px;
     overflow: hidden;
     .home-comments-left{
       font-weight: bold;
@@ -87,11 +87,21 @@ a {
     // }
     .comments-container{
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      div{
+      margin-top: 5px;
+      .profile-picture{
+        width: 25px;
+        height: 25px;
         margin-right: 5px;
+      }
+      div{
+        margin-left: 5px;
         &:first-child{
           font-weight: 500;
+        }
+        &:nth-child(3){
+          margin-left: 40px;
         }
       }
     }
