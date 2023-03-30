@@ -27,7 +27,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('/api/login', formFields)
+      const formFieldsUpdated = { ...formFields, email: formFields.email.toLowerCase() }
+      const response = await axios.post('/api/login', formFieldsUpdated)
+      console.log(formFieldsUpdated)
       // localStorage.setItem('user-token', response.data.token)
       setToken(response.data.token)
       navigate('/')
