@@ -23,11 +23,17 @@ const Profile = () => {
     console.log(e.target.value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    userInfo.bio = newBio
-    window.localStorage.setItem('newBio', newBio)
-    console.log(userInfo)
+    try {
+      await axios.put(`/profile/${userInfo.id}`, newBio)
+      navigate(`/posts/${userInfo.id}`)
+    } catch (err) {
+      setError(error)
+    }
+    // userInfo.bio = newBio
+    // window.localStorage.setItem('newBio', newBio)
+    // console.log(userInfo)
   }
 
   useEffect(() => {

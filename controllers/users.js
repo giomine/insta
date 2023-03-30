@@ -12,6 +12,20 @@ export const profileView = async (req, res) => {
   }
 }
 
+
+// * PUT route TODO
+// Endpoint: /profile
+// export const editBio = async (req, res) => {
+//   try {
+//     const profile = await req.loggedInUser.populate('posts')
+//     return res.json(profile)
+//   } catch (err) {
+//     return sendError(err, res)
+//   }
+// }
+
+
+
 // * GET route
 export const otherUserProfile = async (req, res) => {
   try {

@@ -32,6 +32,7 @@ router.route('/posts/:postId/comments/:commentId')
 
 router.route('/profile')
   .get(secureRoute, profileView)
+  .put()
 
 router.route('/profile/:id')
   .get(otherUserProfile)
