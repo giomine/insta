@@ -32,6 +32,7 @@ const SinglePost = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
+      formFields.text = ''
     } catch (err) {
       console.log(err)
     }
