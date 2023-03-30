@@ -39,7 +39,7 @@ const EditBio = () => {
   }
 
   const handleChange = (e) => {
-    setNewBio(e.target.value)
+    setNewBio({ bio: e.target.value })
   }
 
   return (
