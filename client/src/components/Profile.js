@@ -91,10 +91,12 @@ const Profile = () => {
                   )
                 })
                 :
-
                 <>
-                  <p>No posts yet!</p>
-                </> 
+                  <div></div> {/* this pushes the message into the center because there are three columns in the grid */}
+                  <>
+                    <p>No posts yet!</p>
+                  </> 
+                </>
 
               }
             </div>
