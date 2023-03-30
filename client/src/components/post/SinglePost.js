@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { isAuthenticated, getToken, userIsOwner } from '../../helpers/auth'
 import DisplayPosts from './DisplayPosts'
+import Spinner from '../common/Spinner.js'
 
 
 const SinglePost = () => {
@@ -169,7 +170,7 @@ const SinglePost = () => {
             </div>
           </div>
         </div>
-        : <p>error</p>
+        : <Spinner />
       }
     </main>
 
