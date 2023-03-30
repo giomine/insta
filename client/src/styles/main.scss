@@ -6,6 +6,7 @@
 @import './components/navbar';
 @import './components/profile-page.scss';
 @import './components/single-page.scss';
+@import './components/footer.scss';
 
 * {
   box-sizing: border-box;
@@ -28,8 +29,9 @@ h4{
   font-size: $text;
 }
 
-.container{
+.main-container{
   width: 90vw;
+  min-height: 100vh;
   @include flex-center();
   flex-direction: column;
 }
