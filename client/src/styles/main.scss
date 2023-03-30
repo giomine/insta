@@ -1,6 +1,6 @@
 @import './global/variables.scss';
 @import './home.scss';
-@import './global/login-page.scss';
+@import './global/page-not-found.scss';
 @import './createPost.scss';
 @import './global/register.scss';
 @import './components/navbar';
@@ -34,4 +34,14 @@ h4{
   min-height: 100vh;
   @include flex-center();
   flex-direction: column;
+}
+
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+.nav-link{
+  width: 100%;
+  text-align: right;
+  padding-right: 5px;
 }
