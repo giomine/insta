@@ -81,7 +81,7 @@ export default [
   },
   {
     caption: 'Frog',
-    image: 'https://pixabay.com/get/g4be521331c02210e1ab0b9a452add01179909d5749c3518f0982c5dcbfd2bb3ffdd521343db1f80710fc6bc2cd77d5fa39c60b81b414f1aac4bf51cd89b98fca_640.jpg',
+    image: 'https://cdn.britannica.com/84/206384-050-00698723/Javan-gliding-tree-frog.jpg',
   },
   {
     caption: 'Had an accident with a can opener',
