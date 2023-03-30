@@ -30,7 +30,7 @@ const ImageUploadField = ({ formFields, setFormFields }) => {
       { formFields.image ? 
         <img style={{ height: '200px' }} src={formFields.image} /> 
         : 
-        <input type="file" onChange={handleUpload}/>
+        <input style={{ fontSize: '14px' }} type="file" onChange={handleUpload}/>
       }
       {error && <p className='text-center'>{error}</p>}
     </div>
