@@ -7,21 +7,19 @@ const EditBio = () => {
   const navigate = useNavigate()
   const { id } = useParams()
 
-
-  const [ formFields, setFormFields] = useState({
+  const [ error, setError ] = useState('')
+  const [ bio, setBio ] = useState('')
+  const [ newBio, setNewBio] = useState({
     bio: '',
   })
-
-  const [ error, setError ] = useState('')
-  const [ newBio, setNewBio ] = useState(null)
 
   useEffect(() => {
     
     const getBio = async () => {
       try {
-        const { data } = await axios.get(`/api/profile/${id}`)
-        setNewBio(data.bio)
-        console.log(data.bio)
+        const { data } = await axios.get(`/api/profile/${id}/edit`)
+        setBio(data)
+        console.log(data)
       } catch (error) {
         setError(error)
       }
@@ -31,9 +29,9 @@ const EditBio = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(formFields)
+    console.log(newBio)
     try {
-      await axios.put(`/api/profile/${id}`, formFields)
+      await axios.put(`/api/profile/${id}/edit`, newBio)
       navigate('/profile')
     } catch (error) {
       setError(error)
@@ -41,8 +39,7 @@ const EditBio = () => {
   }
 
   const handleChange = (e) => {
-    setFormFields({ ...formFields, [e.target.name]: e.target.value })
-    setError('')
+    setNewBio(e.target.value)
   }
 
   return (
@@ -53,7 +50,7 @@ const EditBio = () => {
             <h2>Edit bio</h2>
 
             <label htmlFor="bio">
-              <input name='bio' placeholder={newBio} value={formFields.bio} onChange={handleChange} />
+              <input name='bio' placeholder={bio} value={newBio.bio} onChange={handleChange} />
             </label>
             
             <button type="submit">Submit</button>

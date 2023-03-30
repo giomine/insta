@@ -12,6 +12,19 @@ export const profileView = async (req, res) => {
   }
 }
 
+// * GET route
+// Endpoint: /profile/:id/edit
+export const getBio = async (req, res) => {
+  try {
+    const { id } = req.params
+    const user = await User.findById(id)
+    const bio = user.bio
+    return res.json(bio)
+  } catch (err) {
+    return sendError(err, res)
+  }
+}
+
 
 // * PUT route TODO
 // Endpoint: /profile/:id/edit
@@ -20,10 +33,9 @@ export const editBio = async (req, res) => {
     const { id } = req.params
     const profileToEdit = await User.findById(id)
     if (!profileToEdit) throw new NotFound('User not found')
-    // if (!profileToEdit.owner.equals(req.loggedInUser._id)){
-    //   throw new Error('Unauthorized')
-    // }
+    // const bioToEdit = profileToEdit.bio
     Object.assign(profileToEdit, req.body)
+    profileToEdit.passwordConfirmation = profileToEdit.password
     await profileToEdit.save()
     return res.json(profileToEdit)
   } catch (err) {
