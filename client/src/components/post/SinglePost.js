@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { isAuthenticated, getToken, userIsOwner } from '../../helpers/auth'
 import DisplayPosts from './DisplayPosts'
-import Spinner from '../common/Spinner.js'
+import SpinnerComponent from '../common/Spinner'
 
 
 const SinglePost = () => {
@@ -171,7 +171,15 @@ const SinglePost = () => {
             </div>
           </div>
         </div>
-        : <Spinner />
+        : 
+        <>
+          {
+            error ?
+              <p className='text-center'>{error.message}</p>
+              :
+              <SpinnerComponent />
+          }
+        </>
       }
     </main>
 

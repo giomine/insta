@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import DisplayPosts from './post/DisplayPosts'
 import axios from 'axios'
+import SpinnerComponent from './common/Spinner.js'
 
 const OtherProfiles = () => {
 
@@ -71,8 +72,12 @@ const OtherProfiles = () => {
           </>
           : 
           <>
-            <p>User not found</p>
-            {/* <SpinnerComponent/> */}
+            {
+              error ?
+                <p>User not found</p>
+                :
+                <SpinnerComponent />
+            }
           </> 
         }
       </>
