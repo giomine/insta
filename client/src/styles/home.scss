@@ -44,7 +44,7 @@ a {
     padding: 0 10px;
     max-height: 70px;
     overflow: scroll;
-    margin: 10px 0;
+    margin: 10px 0 0;
   }
   
   .username {
@@ -53,7 +53,7 @@ a {
 
   .caption{
     padding: 5px 0;
-    max-height: 40px;
+    height: 45px;
   }
 
   .username{
@@ -64,20 +64,50 @@ a {
   }
 
   .caption{
-    overflow: scroll;
+    overflow: hidden;
   }
 
   .home-comments{
     @include flex-center();
+    justify-content: flex-start;
     align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: column;
     font-size: $text;
-    padding: 0 10px 30px;
-    height: 20px;
-    overflow: scroll;
+    margin: 0 10px 15px;
+    height: 70px;
+    overflow: hidden;
+    .home-comments-username{
+      display: flex;
+      width: 100%;
+    }
     .home-comments-left{
       font-weight: bold;
-      margin-right: 5px;
+    }
+    .comments-container{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 5px;
+      .profile-picture{
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+      }
+      div {
+        &:first-child{
+          font-weight: 500;
+        }
+      }
+      .home-comments-margin{
+        display: flex;
+        flex-direction: column;
+        margin-left: 35px;
+        margin-top: -5px;
+        .text{
+          margin-right: 5px;
+          font-weight: normal;
+        }
+      }
     }
   }
 
@@ -111,11 +141,6 @@ a {
   }
 }
 
-@media (min-width: 660px) and (max-width: 750px ){
-  .home-comments-right {
-    max-width: 80px;
-  }
-}
 
 // Swap the above media query for this one if you want column instead of grid THIS PROBABLY doesn't work now i made a lot of changes
 // @media (min-width: 660px){

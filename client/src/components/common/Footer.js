@@ -1,16 +1,18 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
 
   return (
     <div className="footer-container">
       <div className="footer">
-        <div className="item">Instagram</div>
-        <div className="item">About</div>
-        <div className="item">Blog</div>
-        <div className="item">Jobs</div>
-        <div className="item">Help</div>
-        <div className="item">UK</div>
-        <div className="item">&copy; Insta</div>
-        <div className="item">Matea, James, & Giorgia</div>
+        <Link to='/' className="item">Instagram</Link>
+        <Link to='/' className="item">About</Link>
+        <Link to='/' className="item">Blog</Link>
+        <Link to='/' className="item">Jobs</Link>
+        <Link to='/' className="item">Help</Link>
+        <Link to='/' className="item">UK</Link>
+        <Link to='/' className="item">&copy; Insta</Link>
+        <Link to='/' className="item">Matea, James, & Giorgia</Link>
       </div>
     </div>
   )

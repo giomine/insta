@@ -12,10 +12,12 @@ const DisplayPosts = ({ _id, profile, userId, link, username, caption, image }) 
             <h4>{username}</h4>
           </Link>
         </div>
-        <Link key={_id} to={`/posts/${_id}`}><div className='post-image' style={{ backgroundImage: `url('${image}')` }}></div></Link>
-        <div className="thing">
-          <div className='caption'>{caption}</div>
-        </div>
+        <Link key={_id} to={`/posts/${_id}`}>
+          <div className='post-image' style={{ backgroundImage: `url('${image}')` }}></div>
+          <div className="thing">
+            <div className='caption'>{caption}</div>
+          </div>
+        </Link>
       </div>
     </>
   )

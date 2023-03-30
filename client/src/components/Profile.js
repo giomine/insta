@@ -39,10 +39,10 @@ const Profile = () => {
             Authorization: `Bearer ${getToken()}`,
           },
         })
-        console.log('response')
-        // console.log(response.data)
+        
+        const sortedPosts = response.data.posts.reverse()
         setUserInfo(response.data)
-        console.log(response.data)
+        // console.log(response.data)
         // }, 50000)
 
       } catch (err){

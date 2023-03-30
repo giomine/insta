@@ -2,11 +2,12 @@
 
 .footer-container{
   font-size: 0.8rem;
-  color: $placeholderText;
+  // color: $placeholderText;
   width: 100vw;
   padding: 30px 10px 20px;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   flex-grow: 1;
   .footer{
     display: flex;
@@ -16,5 +17,8 @@
   }
   .item {
     margin: 0 10px;
+  }
+  a{
+    color: $placeholderText;
   }
 }
