@@ -43,7 +43,7 @@ const CreatePost = () => {
     <div className='form-container'>
       <div className="form-border">
         <form action="" onSubmit={handleSubmit}>
-          <h1>Create Post</h1>
+          <h2>Create post</h2>
 
           < ImageUploadField
             setFormFields={setFormFields}

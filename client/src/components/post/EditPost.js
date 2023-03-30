@@ -65,7 +65,7 @@ const EditPost = () => {
         <main className="form-container">
           <div className="form-border">
             <form action="" onSubmit={handleSubmit}>
-              <h1>Edit Post</h1>
+              <h2>Edit post</h2>
               <div style={{ backgroundImage: `url('${posts.image}')` }} className='profile-picture'></div>
               {/* <label htmlFor="caption"></label>
               <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} /> */}
