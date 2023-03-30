@@ -175,7 +175,8 @@ const SinglePost = () => {
         <>
           {
             error ?
-              <p className='text-center'>{error.message}</p>
+              // <p className='text-center'>{error.message}</p>
+              <p className='text-center'>Post not found</p>
               :
               <SpinnerComponent />
           }
