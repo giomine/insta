@@ -5,10 +5,6 @@ $button: rgb(103, 103, 220);
 $textWhite: white;
 $textBlack: black;
 $placeholderText: rgb(148, 145, 145);
-// $desktopButtonWidth: 100px;
-// $mobileButtonWidth: 100px;
-// $desktopInputWidth: 20px;
-// $mobileInputWidth: 20px;
 $desktopContainerWidth: 500px;
 $mobileContainerWidth: 90vw;
 $desktopSinglePostContainer: 100px;
@@ -36,14 +32,13 @@ $text: 0.9rem;
 }
 
 @mixin inputs(){
-  // width: 200px;
   padding: 10px;
   margin: 10px auto;
   border: $border;
   border-radius: 3px;
   outline: none;
   width: 220px;
-  font-size: 0.9rem;
+  font-size: 16px;
 }
 
 @mixin buttons(){

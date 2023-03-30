@@ -43,7 +43,7 @@ const Profile = () => {
         // console.log(response.data)
         setUserInfo(response.data)
         console.log(response.data)
-        // }, 5000)
+        // }, 50000)
 
       } catch (err){
         setError(err)
@@ -91,10 +91,12 @@ const Profile = () => {
                   )
                 })
                 :
-
                 <>
-                  <p>No posts yet!</p>
-                </> 
+                  <div></div> {/* this pushes the message into the center because there are three columns in the grid */}
+                  <>
+                    <p>No posts yet!</p>
+                  </> 
+                </>
 
               }
             </div>

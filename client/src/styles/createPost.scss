@@ -11,6 +11,10 @@
     border: $border;
     @include flex-center();
     flex-direction: column;
+
+    h2{
+      margin-bottom: 30px;
+    }
     
     form {
       @include flex-center();
@@ -19,8 +23,6 @@
       
       input, textarea{
         @include inputs();
-        // width: 220px;
-        // font-size: 0.9rem;
       }
 
       button{
