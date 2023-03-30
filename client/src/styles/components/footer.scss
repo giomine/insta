@@ -1,7 +1,7 @@
 @import '../global/variables.scss';
 
 .footer-container{
-  font-size: $text;
+  font-size: 0.8rem;
   color: $placeholderText;
   width: 100vw;
   padding: 30px 10px 20px;
@@ -15,6 +15,6 @@
     flex-wrap: wrap;
   }
   .item {
-    margin: 0 4px;
+    margin: 0 10px;
   }
 }
