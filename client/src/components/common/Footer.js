@@ -11,7 +11,7 @@ const Footer = () => {
         <Link to='/' className="item">Jobs</Link>
         <Link to='/' className="item">Help</Link>
         <Link to='/' className="item">UK</Link>
-        <Link to='https://github.com/giomine/insta' className="item">Matea, James, & Giorgia</Link>
+        <Link target="_blank" to='https://github.com/giomine/insta' className="item">Matea, James, & Giorgia</Link>
       </div>
     </div>
   )
