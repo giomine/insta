@@ -4,14 +4,6 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/57e4d2444251ac14f1dc8460962e33791c3ad6e04e50744172277fd79f4ec4_640.jpg',
   },
   {
-    caption: 'Me going to work in the morning',
-    image: 'https://randomwordgenerator.com/img/picture-generator/57e0d1444250a414f1dc8460962e33791c3ad6e04e50744077297bd59445c2_640.jpg',
-  },
-  {
-    caption: 'He has no idea where he\'s going',
-    image: 'https://randomwordgenerator.com/img/picture-generator/57e0d643425aa814f1dc8460962e33791c3ad6e04e507440712f7bd5904bc1_640.jpg',
-  },
-  {
     caption: 'I love this photo!',
     image: 'https://randomwordgenerator.com/img/picture-generator/5ee8d2414d50b10ff3d8992cc12c30771037dbf85254794e73287ad49048_640.jpg',
   },
@@ -34,10 +26,6 @@ export default [
   {
     caption: 'Frog',
     image: 'https://cdn.britannica.com/84/206384-050-00698723/Javan-gliding-tree-frog.jpg',
-  },
-  {
-    caption: '#Iwokeuplikethis',
-    image: 'https://randomwordgenerator.com/img/picture-generator/57e7dd474c56a814f1dc8460962e33791c3ad6e04e50774977267cdd9e45cd_640.jpg',
   },
   {
     caption: 'You will never be this cool',
@@ -68,10 +56,6 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/57e2d54b4b5aa414f1dc8460962e33791c3ad6e04e5074417c2c7fd59044c1_640.jpg',
   },
   {
-    caption: 'Ain\'t nothin\' but a mop dog, moppin\' all the time',
-    image: 'https://randomwordgenerator.com/img/picture-generator/57e6d44a495aaa14f1dc8460962e33791c3ad6e04e507441722978d69f4ac2_640.jpg',
-  },
-  {
     caption: 'Daft Punk\'s distant cousin, Dim Delinquent',
     image: 'https://randomwordgenerator.com/img/picture-generator/sebastiaan-stam-XbZkCaminOY-unsplash.jpg',
   },
@@ -92,24 +76,12 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/52e3d1464e4faa0df7c5d57bc32f3e7b1d3ac3e456597948702d7ad195_640.jpg',
   },
   {
-    caption: 'Do da stanky leg',
-    image: 'https://randomwordgenerator.com/img/picture-generator/55e4d5434f55a914f1dc8460962e33791c3ad6e04e507441722978d6904ec2_640.jpg',
-  },
-  {
-    caption: 'Imagine the bugs :/',
-    image: 'https://randomwordgenerator.com/img/picture-generator/52e0dc404c5ab10ff3d8992cc12c30771037dbf85254784b772872dc944f_640.jpg',
-  },
-  {
     caption: 'Cool gloves!',
     image: 'https://randomwordgenerator.com/img/picture-generator/57e8d2414c5bab14f1dc8460962e33791c3ad6e04e50744077297bd5964acd_640.jpg',
   },
   {
     caption: 'Worlds worst carpenter',
     image: 'https://randomwordgenerator.com/img/picture-generator/57e6d74a4f5aab14f1dc8460962e33791c3ad6e04e50744172287edc9e44c2_640.jpg',
-  },
-  {
-    caption: 'I feel like there\'s better ways to weigh a potato',
-    image: 'https://randomwordgenerator.com/img/picture-generator/57e0d4464b50a914f1dc8460962e33791c3ad6e04e50744172297cdd9345cc_640.jpg',
   },
   {
     caption: 'When people are singing happy birthday to you and you don\'t know what to do',
@@ -196,7 +168,7 @@ export default [
     image: 'https://i.imgur.com/UK8qwXY.png',
   },
   {
-    caption: '"Can\'t get enough of this stunning interior design inspo...so chic and elegant. #decorinspiration',
+    caption: 'Can\'t get enough of this stunning interior design inspo...so chic and elegant. #decorinspiration',
     image: 'https://i.imgur.com/v214B1C.png',
   },
   {
@@ -274,5 +246,54 @@ export default [
   {
     caption: 'Its heeerreeee woohoo 🥳🙌',
     image: 'https://parade.com/.image/t_share/MTk0MTY0NjExODk1Nzk3MjUz/friday-quotes.jpg',
+  },
+  {
+    caption: 'Exploring the grandeur of Baroque design.',
+    image: 'https://i.imgur.com/heFg4bZ.png',
+  },
+  {
+    caption: 'Incredible architecture at the Harbin Opera House.',
+    image: 'https://i.imgur.com/cDvCjS9.png',
+  },
+  {
+    caption: 'Paros, Greece',
+    image: 'https://i.imgur.com/4nSky2H.png',
+  },
+  {
+    caption: 'Wandering through the charming towns of the Amalfi Coast.',
+    image: 'https://i.imgur.com/8J4yghE.png',
+  },
+  {
+    caption: 'Chasing sunsets 🌅 on the beach 🏖️',
+    image: 'https://i.imgur.com/fhXo9b1.png',
+  },
+  {
+    caption: 'Love at first slice 🍕❤️',
+    image: 'https://i.imgur.com/7XwaaEm.png',
+  },
+  {
+    caption: 'Nothing beats pancakes on a lazy Sunday morning 🥞 #weekendvibes',
+    image: 'https://i.imgur.com/8eZs6tV.png',
+  },
+  {
+    caption: 'Click, snap, print 📷❤️',
+    image: 'https://i.imgur.com/pJSR5up.png',
+  },
+  {
+    caption: 'Seas the day 🌊',
+    image: 'https://i.imgur.com/rF5CZ7O.png',
+  },
+  {
+    caption: 'Scoops of happiness 🍦❤️ ',
+    image: 'https://i.imgur.com/22dVACd.png',
+  },
+  {
+    caption: 'Nothing beats the sound of vinyl 🎶🎵 #vinyllove ',
+    image: 'https://i.imgur.com/5p07z8o.png',
+  },
+  {
+    caption: '☕️',
+    image: 'https://i.imgur.com/DuhknJQ.png',
   }
+
 ]
