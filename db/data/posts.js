@@ -132,7 +132,7 @@ export default [
     image: 'https://randomwordgenerator.com/img/picture-generator/5ee4d04b4e55b10ff3d8992cc12c30771037dbf85254794e73277bd6924c_640.jpg',
   },
   {
-    caption: 'Everything I touch turns to gay',
+    caption: 'Everything I touch turns to skittles',
     image: 'https://randomwordgenerator.com/img/picture-generator/55e8d5464b5aa414f1dc8460962e33791c3ad6e04e507749712e79d2914bcd_640.jpg',
   },
   {

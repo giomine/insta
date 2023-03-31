@@ -12,7 +12,7 @@ export const profileView = async (req, res) => {
   }
 }
 
-// * GET route
+// * GET bio route
 // Endpoint: /profile/:id/edit
 export const getBio = async (req, res) => {
   try {
@@ -26,7 +26,7 @@ export const getBio = async (req, res) => {
 }
 
 
-// * PUT route TODO
+// * PUT bio route
 // Endpoint: /profile/:id/edit
 export const editBio = async (req, res) => {
   try {
@@ -38,6 +38,36 @@ export const editBio = async (req, res) => {
     profileToEdit.passwordConfirmation = profileToEdit.password
     await profileToEdit.save()
     return res.json(profileToEdit)
+  } catch (err) {
+    return sendError(err, res)
+  }
+}
+
+// * GET profile picture route
+// Endpoint: /profile/:id/edit-picture
+export const getPicture = async (req, res) => {
+  try {
+    const { id } = req.params
+    const user = await User.findById(id)
+    const picture = user.profilePhoto
+    return res.json(picture)
+  } catch (err) {
+    return sendError(err, res)
+  }
+}
+
+// * PUT profile picture route
+// Endpoint: /profile/:id/edit-picture
+export const changePicture = async (req, res) => {
+  try {
+    const { id } = req.params
+    const photoToChange = await User.findById(id)
+    if (!photoToChange) throw new NotFound('User not found')
+    // const bioToEdit = profileToEdit.bio
+    Object.assign(photoToChange, req.body)
+    photoToChange.passwordConfirmation = photoToChange.password
+    await photoToChange.save()
+    return res.json(photoToChange)
   } catch (err) {
     return sendError(err, res)
   }
@@ -57,26 +87,3 @@ export const otherUserProfile = async (req, res) => {
     return sendError(err, res)
   }
 }
-
-
-// * PUT route
-// Endpoint: /profile/:id
-// export const editProfile = async (req, res) => {
-//   try {
-//     const { id } = req.params
-//     console.log(id)
-//     const profileToEdit = await User.findById(id)
-//     console.log('PROFILE --->', profileToEdit)
-//     if (!profileToEdit) throw new NotFound('Profile not found')
-//     if (!profileToEdit.owner.equals(req.loggedInUser._id)){
-//       throw new Error('Unauthorized')
-//     }
-//     Object.assign(profileToEdit, req.body)
-//     await profileToEdit.save()
-//     return res.json(profileToEdit)
-//   } catch (err) {
-//     console.log(err)
-//     // return sendError(err, res)
-//     return res.json({ message: `Gah, errors! ${err}` })
-//   }
-// }
