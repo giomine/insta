@@ -81,7 +81,7 @@ export default [
   },
   {
     caption: 'Frog',
-    image: 'https://pixabay.com/get/g4be521331c02210e1ab0b9a452add01179909d5749c3518f0982c5dcbfd2bb3ffdd521343db1f80710fc6bc2cd77d5fa39c60b81b414f1aac4bf51cd89b98fca_640.jpg',
+    image: 'https://media.istockphoto.com/id/1049028724/photo/red-eyed-tree-frog-smile.jpg?s=612x612&w=0&k=20&c=mbgn5pLlHri8BV17jdw_nzzRBBJ9PC3IQryFADqHVqI=',
   },
   {
     caption: 'Had an accident with a can opener',
@@ -310,10 +310,6 @@ export default [
   {
     caption: 'Due to budgetary cutbacks, the Russain army can now only afford finger guns - pew pew',
     image: 'https://randomwordgenerator.com/img/picture-generator/54e2d2404c5baa14f1dc8460962e33791c3ad6e04e507440762e79d79649c7_640.jpg',
-  },
-  {
-    caption: 'Due to budguns - pew pew',
-    image: 'https://media.dayoftheshirt.com/images/shirts/VjnBW/qwertee_pew-pew-pew-kachu_1549923118.large.png',
   },
   {
     caption: 'Sailing',
