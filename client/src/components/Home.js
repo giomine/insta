@@ -20,8 +20,8 @@ const Home = () => {
             Authorization: `Bearer ${getToken()}`,
           },
         })
-        console.log('response')
-        console.log(response.data.username)
+        // console.log('response')
+        // console.log(response.data.username)
         setUser(response.data.username)
         // console.log(response.headers)
 
@@ -58,7 +58,7 @@ const Home = () => {
           posts.map(post => {
             const { _id, caption, image, owner, comments } = post
             // console.log(_id, caption, image, owner.username, comments[0])
-            console.log(owner.profilePhoto)
+            // console.log(owner.profilePhoto)
             {user === owner.username ? linkUrl = '/profile' : linkUrl = `/profile/${owner.id}`}
             return (
               <div key={_id}>

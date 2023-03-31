@@ -8,9 +8,9 @@ import { sendError } from '../config/errors.js'
 
 export const registerUser = async (req, res) => {
   try {
-    console.log('REQ.BODY -->', req.body)
+    // console.log('REQ.BODY -->', req.body)
     const newUser = await User.create(req.body)
-    console.log(newUser)
+    // console.log(newUser)
     return res.json({ message: `Welcome ${newUser.username}!` })
 
   } catch (error) {
@@ -25,7 +25,7 @@ export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body
     const userToLogin = await User.findOne({ email: email })
-    console.log(userToLogin)
+    // console.log(userToLogin)
     const userIsValidated = await userToLogin.validatePassword(password)
     if (!userToLogin || !userIsValidated){
       throw new Error()

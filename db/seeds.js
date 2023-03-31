@@ -30,7 +30,7 @@ const seedDatabase = async() => {
     console.log(` ${createdPosts.length} posts added`)
 
     await mongoose.connection.close()
-    console.log('Conenction closed')
+    console.log('Connection closed')
 
   } catch (error) {
     console.log(error)

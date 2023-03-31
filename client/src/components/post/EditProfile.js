@@ -1,5 +1,4 @@
 import ProfileUpload from './ProfileUpload.js'
-import EditBio from './EditBio.js'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -22,7 +21,7 @@ const EditProfile = () => {
       try {
         const { data } = await axios.get(`/api/profile/${id}`)
         setPhoto(data)
-        console.log('getPhoto ->', data)
+        // console.log('getPhoto ->', data)
       } catch (error) {
         setError(error)
       }
@@ -43,7 +42,7 @@ const EditProfile = () => {
       try {
         const { data } = await axios.get(`/api/profile/${id}/edit`)
         setBio(data)
-        console.log(data)
+        // console.log(data)
       } catch (error) {
         setError(error)
       }
@@ -59,7 +58,7 @@ const EditProfile = () => {
   // ! Sumbit both profile and bio
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(newPhoto)
+    // console.log(newPhoto)
     try {
       await axios.put(`/api/profile/${id}/edit-picture`, newPhoto)
       await axios.put(`/api/profile/${id}/edit`, newBio)

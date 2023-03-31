@@ -19,7 +19,7 @@ const EditBio = () => {
       try {
         const { data } = await axios.get(`/api/profile/${id}/edit`)
         setBio(data)
-        console.log(data)
+        // console.log(data)
       } catch (error) {
         setError(error)
       }
@@ -29,7 +29,7 @@ const EditBio = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(newBio)
+    // console.log(newBio)
     try {
       await axios.put(`/api/profile/${id}/edit`, newBio)
       navigate('/profile')

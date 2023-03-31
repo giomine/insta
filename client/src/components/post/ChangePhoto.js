@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-// import ImageUploadField from './ImageUploadField.js'
 import ProfileUpload from './ProfileUpload'
 
 const ChangePhoto = () => {
@@ -21,7 +20,7 @@ const ChangePhoto = () => {
       try {
         const { data } = await axios.get(`/api/profile/${id}`)
         setPhoto(data)
-        console.log('getPhoto ->', data)
+        // console.log('getPhoto ->', data)
       } catch (error) {
         setError(error)
       }
@@ -31,7 +30,7 @@ const ChangePhoto = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(newPhoto)
+    // console.log(newPhoto)
     try {
       await axios.put(`/api/profile/${id}/edit-picture`, newPhoto)
       navigate('/profile')
@@ -40,9 +39,6 @@ const ChangePhoto = () => {
     }
   }
 
-  // const handleChange = (e) => {
-  //   setNewPhoto({ newPhoto: e.target.value })
-  // }
 
   return (
     <>
@@ -55,12 +51,6 @@ const ChangePhoto = () => {
               setFormFields={setNewPhoto}
               formFields={newPhoto}
             />
-
-            {/* <label htmlFor="image">
-              <textarea name='image' cols="21" rows="2" placeholder="add new photo" value={newPhoto.profilePhoto} onChange={handleChange} />
-            </label> */}
-
-            {/* <img style={{ height: '220px' }} src={newPhoto ? newPhoto : photo.profilePhoto} alt="" /> */}
             
             <button type="submit">Submit</button>
             {error && <p className='text-center'>{error}</p>}

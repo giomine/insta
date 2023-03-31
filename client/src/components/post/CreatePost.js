@@ -24,14 +24,14 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      console.log(formFields)
-      console.log('new response')
+      // console.log(formFields)
+      // console.log('new response')
       const response = await axios.post('/api/posts', formFields, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      console.log(response)
+      // console.log(response)
       navigate('/')
     } catch (err) {
       // console.log(err)
@@ -50,14 +50,9 @@ const CreatePost = () => {
             formFields={formFields}
           />
 
-          {/* <label htmlFor="caption"></label> */}
-          {/* <input type="text" name="caption" placeholder="write caption" value={formFields.caption} onChange={handleChange} /> */}
           <label htmlFor="caption">
             <textarea name='caption' cols="21" rows="2" placeholder="write caption" value={formFields.caption} onChange={handleChange} />
           </label>
-          
-          {/* <label htmlFor="image"></label>
-          <input type="text" name="image" placeholder="image upload will go here" value={formFields.image} onChange={handleChange} /> */}
           
           <button type="submit">Post</button>
           {error && <p className='text-center'>{error}</p>}
