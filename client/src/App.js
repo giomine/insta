@@ -13,6 +13,7 @@ import CreatePost from './components/post/CreatePost.js'
 import DeletePost from './components/post/DeletePost.js'
 // import DisplayPosts from './components/post/DisplayPosts.js'
 import EditPost from './components/post/EditPost.js'
+import ChangePhoto from './components/post/ChangePhoto.js'
 import SinglePost from './components/post/SinglePost.js'
 import Login from './components/auth/Login.js'
 import Register from './components/auth/Register.js'
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/posts/:id" element={<DeletePost />} />
           {/* <Route path="/posts" element={<DisplayPosts />} /> */}
           <Route path="/posts/:id/edit" element={<EditPost />} />
+          <Route path="/profile/:id/edit-picture" element={<ChangePhoto />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

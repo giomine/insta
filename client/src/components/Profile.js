@@ -48,7 +48,9 @@ const Profile = () => {
         
           <> 
             <div className='profile-top'>
-              <div style={{ backgroundImage: `url('${userInfo.profilePhoto}')` }} className='profile-picture'></div>
+              <Link to={`/profile/${userInfo.id}/edit-picture`}>
+                <div style={{ backgroundImage: `url('${userInfo.profilePhoto}')` }} className='profile-picture'></div>
+              </Link>
               <div className='profile-right'>
                 <div className='profile-username'>{userInfo.username}</div>
                 {/* <div className='bio' onClick={handleBio}>{bio}</div> */}
