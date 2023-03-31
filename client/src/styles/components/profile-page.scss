@@ -22,17 +22,17 @@
 
 
   .profile-picture{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     background-color: rgb(177, 174, 174);
     border-radius: 50%;
     margin-right: 20px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    @media (max-width: 350px){
-      height: 70px;
-      width: 70px;
+    @media (max-width: 660px){
+      height: 120px;
+      width: 120px;
     }
   }
 
@@ -47,37 +47,33 @@
     input{
       text-align: right;
       width: 100%;
-      // color: rgb(15, 15, 15);
     }
 
     button{
       @include buttons();
+      width: 120px;
       padding: 5px;
-      @media (max-width: 350px){
-        font-size: 0.8rem;
-        width: 120px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+    .edit-profile-button{
+      margin-top: 10px;
+      @media(min-width: 430px){
+        margin-left: 5px;
       }
     }
+
   }
 }
 
 .spinner{
   position: fixed;
   top: 50%;
-  // left: 50%;
   translate: (-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-
-// @media (min-width: 600px){
-//   .profile-top{
-//     // width: 80vw;
-//     max-width: 1100px;
-//   }
-// }
 
 
 .profilepage{
@@ -91,15 +87,10 @@
     height: 33vw;
   }
   .username, .caption{
-    // width: 33vw;
-    // max-width: 300px;
     display: none;
   }
   .post-image, .post-card{
     max-width: 300px;
     max-height: 300px;
-    // &:not(.post-card){
-    //   max-height: 300px;
-    // }
   }
 }

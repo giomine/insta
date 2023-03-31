@@ -17,8 +17,8 @@ export const secureRoute = async (req, res, next) => {
     req.loggedInUser = loggedInUser
 
   } catch (error) {
-    console.log(error.status)
-    console.log(error.message)
+    // console.log(error.status)
+    // console.log(error.message)
     return res.status(401).json({ message: 'Unauthorized' })
   }
   next()

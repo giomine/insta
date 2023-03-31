@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
 import { isAuthenticated, handleLogout } from '../../helpers/auth'
 
 import Navbar from 'react-bootstrap/Navbar'
@@ -16,11 +15,6 @@ const PageNavbar = () => {
       <Container>
         <Navbar.Brand to="/" as={Link}>
           Instasham
-          {/* <img 
-            src="https://newbuildings.org/wp-content/uploads/2015/03/client-logo.png"
-            alt = "logo"
-            width ="100px"
-          /> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="app-nav" />
         <Navbar.Collapse id="app-nav" className="justify-content-end">
@@ -30,7 +24,6 @@ const PageNavbar = () => {
               <>
                 <Nav.Link to="/profile" as={Link} eventKey='2'> Profile </Nav.Link>
                 <Nav.Link eventKey='3'><span onClick = {() => handleLogout(navigate)}>Logout</span></Nav.Link>
-                {/* <span className='nav-link' onClick = {() => handleLogout(navigate)}>Logout</span> */}
                 
               </>
               :

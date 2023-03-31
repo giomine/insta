@@ -15,7 +15,7 @@ const OtherProfiles = () => {
       try {
         // setTimeout(async () => {
         const response = await axios.get(`/api/profile/${id}`)
-        console.log('response')
+        // console.log('response')
         response.data.posts.reverse()
         setUserInfo(response.data)
         // console.log(response.data)

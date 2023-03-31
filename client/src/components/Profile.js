@@ -17,6 +17,10 @@ const Profile = () => {
     navigate('/posts')
   }
 
+  const handleProfileClick = () => {
+    navigate(`/profile/${userInfo.id}/edit-profile`)
+  }
+
   useEffect(() => {
     const getProfile = async () => {
       try {
@@ -59,6 +63,7 @@ const Profile = () => {
                 </Link>
                 
                 <button onClick={handleClick}>Create new post</button>
+                <button className='edit-profile-button' onClick={handleProfileClick}>Edit profile</button>
               </div>
             </div>
             

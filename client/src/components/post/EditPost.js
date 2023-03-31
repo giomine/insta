@@ -31,7 +31,7 @@ const EditPost = () => {
         const { data } = await axios.get(`/api/posts/${id}`)
         setFormFields(data)
         setPosts(data)
-        console.log(data.image)
+        // console.log(data.image)
       } catch (error) {
         setError(error)
       }

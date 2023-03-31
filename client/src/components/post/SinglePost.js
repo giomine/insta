@@ -23,7 +23,7 @@ const SinglePost = () => {
 
   const handleChange = (e) => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
-    console.log(formFields)
+    // console.log(formFields)
   }
 
   const handleSubmit = async (e) => {
@@ -47,7 +47,7 @@ const SinglePost = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      console.log('DELETING')
+      // console.log('DELETING')
       navigate('/profile')
     } catch (err) {
       setError(err)

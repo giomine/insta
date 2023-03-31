@@ -25,7 +25,7 @@ const Register = () => {
     try {
       // console.log(formFields)
       const formFieldsUpdated = { ...formFields, email: formFields.email.toLowerCase() }
-      console.log(formFieldsUpdated)
+      // console.log(formFieldsUpdated)
       await axios.post('/api/register', formFieldsUpdated)
 
       navigate('/login')

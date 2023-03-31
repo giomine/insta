@@ -81,7 +81,7 @@ export const editPost = async (req, res) => {
     await postToEdit.save()
     return res.json(postToEdit)
   } catch (err) {
-    console.log(err)
+    // console.log(err)
     // return sendError(err, res)
     return res.json({ message: `Gah, errors! ${err}` })
   }
