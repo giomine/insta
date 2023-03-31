@@ -111,7 +111,7 @@ const Home = () => {
           })
           : 
           <>
-            { error ? 
+            { error & posts ? 
               <p>{<p className='text-center'>{error.message}</p>}</p>
               :
               <SpinnerComponent/>}

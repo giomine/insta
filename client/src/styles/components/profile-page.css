@@ -1,0 +1,100 @@
+.profile-top {
+  width: 100vw;
+  max-width: 100vw;
+  padding: 40px 15px 0;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 660px) {
+  .profile-top {
+    padding: 40px 20px;
+  }
+}
+@media (min-width: 920px) {
+  .profile-top {
+    border-bottom: 1px solid rgb(177, 174, 174);
+  }
+}
+@media (min-width: 1100px) {
+  .profile-top {
+    max-width: 1100px;
+  }
+}
+.profile-top .profile-picture {
+  height: 150px;
+  width: 150px;
+  background-color: rgb(177, 174, 174);
+  border-radius: 50%;
+  margin-right: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 660px) {
+  .profile-top .profile-picture {
+    height: 120px;
+    width: 120px;
+  }
+}
+.profile-top .profile-right {
+  width: 60%;
+  text-align: right;
+}
+.profile-top .profile-right .profile-username {
+  font-weight: bold;
+}
+.profile-top .profile-right input {
+  text-align: right;
+  width: 100%;
+}
+.profile-top .profile-right button {
+  width: 220px;
+  padding: 10px;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+  width: 120px;
+  padding: 5px;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+.profile-top .profile-right .edit-profile-button {
+  margin-top: 10px;
+}
+@media (min-width: 430px) {
+  .profile-top .profile-right .edit-profile-button {
+    margin-left: 5px;
+  }
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  translate: -50%, -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profilepage {
+  width: 100vw;
+  max-width: 908px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  text-align: center;
+}
+.profilepage .post-image, .profilepage .post-card {
+  width: 33vw;
+  height: 33vw;
+}
+.profilepage .username, .profilepage .caption {
+  display: none;
+}
+.profilepage .post-image, .profilepage .post-card {
+  max-width: 300px;
+  max-height: 300px;
+}/*# sourceMappingURL=profile-page.css.map */
