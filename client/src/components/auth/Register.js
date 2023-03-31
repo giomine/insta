@@ -23,10 +23,11 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      console.log(formFields)
-      await axios.post('/api/register', formFields)
-      // localStorage.setItem('user-token', response.data.token)
-      // console.log(response.data.token)
+      // console.log(formFields)
+      const formFieldsUpdated = { ...formFields, email: formFields.email.toLowerCase() }
+      console.log(formFieldsUpdated)
+      await axios.post('/api/register', formFieldsUpdated)
+
       navigate('/login')
     } catch (err) {
       // console.log(err)
