@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import ImageUploadField from './ImageUploadField.js'
-// import ProfileUpload from './ProfileUpload'
+// import ImageUploadField from './ImageUploadField.js'
+import ProfileUpload from './ProfileUpload'
 
 const ChangePhoto = () => {
 
@@ -51,7 +51,7 @@ const ChangePhoto = () => {
           <form action="" onSubmit={handleSubmit}>
             <h2>Add profile picture</h2>
 
-            <ImageUploadField 
+            <ProfileUpload 
               setFormFields={setNewPhoto}
               formFields={newPhoto}
             />
