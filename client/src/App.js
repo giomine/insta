@@ -34,7 +34,6 @@ const App = () => {
           <Route path="/posts/:id/edit" element={<EditPost />} />
           <Route path="/profile/:id/edit-picture" element={<ChangePhoto />} />
           <Route path="/profile/:id/edit-profile" element={<EditProfile />} />
-
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile/:id" element={<OtherProfiles />} />

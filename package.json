@@ -1,7 +1,7 @@
 {
   "name": "insta",
   "version": "1.0.0",
-  "description": "James",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "serve": "npx nodemon index.js",
