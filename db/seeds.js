@@ -15,7 +15,7 @@ const seedDatabase = async() => {
     await mongoose.connect(process.env.MONGO_URI)
     console.log('DB connection established')
 
-    await mongoose.connection.db.dropDatabase()
+    await Promise.all(Object.values(mongoose.connection.collections).map(async collection => await collection.deleteMany()))
     console.log('DB dropped')
 
     const createdUsers = await User.create(userData)
