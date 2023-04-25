@@ -2,6 +2,11 @@ import express from 'express'
 import mongoose from 'mongoose'
 import router from './config/router.js'
 import 'dotenv/config'
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const app = express()
 
@@ -19,6 +24,12 @@ const startServer = async () => {
 
     // When routes are ready, this will be replaced with:
     app.use('/api', router)
+
+    app.use(express.static(path.join(__dirname, 'client', 'build')))
+
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+    })
     // app.use(router)
     // app.get('/insta', (req, res) => {
     //   return res.json({ message: 'Welcome to home page :)' })
