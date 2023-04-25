@@ -40,7 +40,7 @@ export default [
     bio: '...',
   },
   {
-    profilePhoto: 'https://cdn-ajggd.nitrocdn.com/kMoOFpDlsOVtlYJLrnSRNCQXaUFHZPTY/assets/images/optimized/rev-3baab07/wp-content/uploads/bb-plugin/cache/cool-profile-pic-matheus-ferrero-landscape.jpeg',
+    profilePhoto: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
     username: 'laki',
     email: 'laki@email.com',
     password: 'pass',
@@ -48,7 +48,7 @@ export default [
     bio: 'travelling wanderer',
   },
   {
-    profilePhoto: 'https://cdn-ajggd.nitrocdn.com/kMoOFpDlsOVtlYJLrnSRNCQXaUFHZPTY/assets/images/optimized/rev-3baab07/wp-content/uploads/2021/06/Cool-profile-picture-LinkedIn.jpg',
+    profilePhoto: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
     username: 'thejess_post',
     email: 'jess@email.com',
     password: 'pass',
@@ -56,7 +56,7 @@ export default [
     bio: 'keep smiling ✌️',
   },
   {
-    profilePhoto: 'https://cdn-ajggd.nitrocdn.com/kMoOFpDlsOVtlYJLrnSRNCQXaUFHZPTY/assets/images/optimized/rev-3baab07/wp-content/uploads/2021/06/Cool-profile-picture-Discord.jpg',
+    profilePhoto: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
     username: 'micaela',
     email: 'micaela@email.com',
     password: 'pass',
@@ -64,7 +64,7 @@ export default [
     bio: 'join me on my travels around the world ✈️🌎',
   },
   {
-    profilePhoto: 'https://cdn-ajggd.nitrocdn.com/kMoOFpDlsOVtlYJLrnSRNCQXaUFHZPTY/assets/images/optimized/rev-3baab07/wp-content/uploads/2021/06/Cool-profile-picture-exposure.jpg',
+    profilePhoto: 'https://images.unsplash.com/photo-1525357816819-392d2380d821?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80',
     username: 'claudio',
     email: 'claudio@email.com',
     password: 'pass',
@@ -72,7 +72,7 @@ export default [
     bio: 'DM for collabs',
   },
   {
-    profilePhoto: 'https://cdn-ajggd.nitrocdn.com/kMoOFpDlsOVtlYJLrnSRNCQXaUFHZPTY/assets/images/optimized/rev-3baab07/wp-content/uploads/2021/06/Cool-profile-picture-Brand-Identity.jpg',
+    profilePhoto: 'https://images.unsplash.com/photo-1520295187453-cd239786490c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80',
     username: 'zaralynn',
     email: 'zara@email.com',
     password: 'pass',
@@ -80,7 +80,7 @@ export default [
     bio: 'inspired ✨',
   },
   {
-    profilePhoto: 'https://cdn-ajggd.nitrocdn.com/kMoOFpDlsOVtlYJLrnSRNCQXaUFHZPTY/assets/images/optimized/rev-3baab07/wp-content/uploads/2021/06/Cool-profile-picture-Size.jpg',
+    profilePhoto: 'https://images.unsplash.com/photo-1531256456869-ce942a665e80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
     username: 'caro_lina',
     email: 'caro@email.com',
     password: 'pass',
