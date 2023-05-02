@@ -12,6 +12,14 @@ const PageNavbar = () => {
   const [ profile, setProfile ] = useState('')
   const navigate = useNavigate()
 
+  const handleClick = () => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }
+
   useEffect(() => {
     const getProfile = async () => {
       try {
@@ -33,7 +41,7 @@ const PageNavbar = () => {
     <>
       <Navbar className='nav-mobile'>
         <Container>
-          <Navbar.Brand to="/" as={Link}>
+          <Navbar.Brand onClick={handleClick} to="/" as={Link}>
             Instasham
           </Navbar.Brand>
           <Nav>
@@ -63,7 +71,7 @@ const PageNavbar = () => {
           <Nav>
             { isAuthenticated() ? 
               <>
-                <Nav.Link to="/" as={Link} > <i className="fa-solid fa-house fa-lg fa"></i> </Nav.Link>
+                <Nav.Link onClick={handleClick} to="/" as={Link} > <i className="fa-solid fa-house fa-lg fa"></i> </Nav.Link>
                 <Nav.Link to="/profile" as={Link} style={{ backgroundImage: `url('${profile.profilePhoto}')` }} className='nav-profile'></Nav.Link>
                 <Nav.Link ><span onClick = {() => handleLogout(navigate)}><i className="fa-solid fa-right-from-bracket fa"></i></span></Nav.Link>
               </>

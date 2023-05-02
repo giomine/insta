@@ -27,6 +27,10 @@ const EditBio = () => {
     getBio()
   }, [])
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     // console.log(newBio)

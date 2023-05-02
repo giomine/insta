@@ -67,6 +67,10 @@ const SinglePost = () => {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     const getPost = async () => {
       try {
         const { data } = await axios.get(`/api/posts/${id}`)

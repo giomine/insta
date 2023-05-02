@@ -23,6 +23,10 @@ const EditPost = () => {
 
   //!On Mount
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
+  useEffect(() => {
 
     // (!isAuthenticated() || !userIsOwner(posts)) && navigate(`/posts/${id}`)
     

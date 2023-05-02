@@ -16,6 +16,10 @@ const EditProfile = () => {
   })
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     
     const getPhoto = async () => {
       try {

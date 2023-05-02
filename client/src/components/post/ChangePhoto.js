@@ -28,6 +28,10 @@ const ChangePhoto = () => {
     getPhoto()
   }, [])
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     // console.log(newPhoto)

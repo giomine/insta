@@ -13,6 +13,10 @@ const Home = () => {
   const [ user, setUser ] = useState('')
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     const getProfile = async () => {
       try {
         const response = await axios.get('/api/profile', {

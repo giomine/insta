@@ -22,6 +22,10 @@ const Profile = () => {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
+  useEffect(() => {
     const getProfile = async () => {
       try {
         // setTimeout(async () => {

@@ -35,6 +35,10 @@ const Login = () => {
     }
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <main className="register-form-container">
       <div className="register-border">

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ImageUploadField from './ImageUploadField'
 import axios from 'axios'
 import { getToken } from '../../helpers/auth'
@@ -38,6 +38,10 @@ const CreatePost = () => {
       setError('Please fill both fields and make sure you are logged in to create a post :)')
     }
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className='form-container'>
