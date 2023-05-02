@@ -10,12 +10,9 @@
     }
     @media (min-width: 1100px){
       max-width: 1100px;
-      // max-width: 80vw;
       padding: 0;
     }
   }
-  // border-bottom: 1px solid rgb(177, 174, 174);
-  // border-bottom: 1px solid $input;
   .navbar-brand{
     font-family: 'Cookie', cursive;
     font-size: 2.4rem;
@@ -25,8 +22,79 @@
   }
   
   .nav-link{
-    width: 100%;
+    margin: 0 5px;
     text-align: right;
     padding-right: 5px;
+    color: black;
+  }
+}
+
+.navbar-nav{
+  align-items: center;
+}
+
+.nav-profile{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+.nav-mobile{
+  display: none;
+}
+
+@media (max-width: 660px){
+  .navbar{
+    position: fixed;
+    bottom: 0;
+    background: white;
+    // border-top: 1px solid $input;
+    padding: 5px 0;
+  }
+  .mobile-none{
+    display: none !important;
+  }
+  .nav-mobile{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0;
+    height: 60px;
+    border-bottom: 1px solid $input;
+    .navbar-nav{
+      width: 40vw;
+      margin-right: 0;
+    }
+  }
+  .navbar-nav{
+    width: 100vw;
+    // height: 40px;
+    margin: 0 auto;
+    justify-content: space-around;
+    a{
+      &:not(.nav-profile){
+        width: 50px;
+      }
+      @include flex-center();
+    }
+    a .fa{
+      font-size: 20px;
+    }
+  }
+  .nav-profile{
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (min-width: 660px){
+  .nav-link{
+    margin: 0 30px !important;
+  }
+  .nav-link:nth-child(3){
+    margin-right: 0 !important;
   }
 }
