@@ -73,7 +73,9 @@ const PageNavbar = () => {
               <>
                 <Nav.Link onClick={handleClick} to="/" as={Link} > <i className="fa-solid fa-house fa-lg fa"></i> </Nav.Link>
                 <Nav.Link to="/profile" as={Link} style={{ backgroundImage: `url('${profile.profilePhoto}')` }} className='nav-profile'></Nav.Link>
-                <Nav.Link ><span onClick = {() => handleLogout(navigate)}><i className="fa-solid fa-right-from-bracket fa"></i></span></Nav.Link>
+                <Nav.Link onClick={handleClick} to="/posts" as={Link} ><i className="fa-solid fa-plus-circle fa-lg fa"></i></Nav.Link>
+                {/* <Nav.Link onClick={handleClick} to="/posts" as={Link} ><i className="fa-solid fa-square-plus fa-lg fa"></i></Nav.Link> */}
+                <Nav.Link ><span onClick = {() => handleLogout(navigate)}><i className="fa-solid fa-right-from-bracket fa-lg fa"></i></span></Nav.Link>
               </>
               :
               <>

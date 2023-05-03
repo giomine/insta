@@ -9,6 +9,9 @@
   justify-content: center;
   align-items: flex-end;
   flex-grow: 1;
+  @media (max-width: 660px){
+    padding-bottom: 50px;
+  }
   .footer{
     display: flex;
     justify-content: center;
