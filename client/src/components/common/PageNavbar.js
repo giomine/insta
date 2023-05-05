@@ -63,7 +63,7 @@ const PageNavbar = () => {
       </Navbar>
 
 
-      <Navbar>
+      <Navbar className='small-on-mobile'>
         <Container>
           <Navbar.Brand className='mobile-none' to="/" as={Link}>
             Instasham

@@ -1,6 +1,9 @@
 @import '../global/variables.scss';
 
 .navbar {
+  border-bottom: 1px solid $input;
+  width: 100vw;
+  height: 60px;
   .container{
     width: 100vw;
     max-width: 1000px;
@@ -51,8 +54,9 @@
     position: fixed;
     bottom: 0;
     background: white;
-    // border-top: 1px solid $input;
+    border-top: 1px solid darken($input, 5%);
     padding: 5px 0;
+    // height: 50px;
   }
   .mobile-none{
     display: none !important;
@@ -62,8 +66,8 @@
     align-items: center;
     position: relative;
     top: 0;
-    height: 60px;
-    border-bottom: 1px solid $input;
+    // height: 50px;
+    border-bottom: 1px solid darken($input, 5%);
     .navbar-nav{
       width: 40vw;
       margin-right: 0;
@@ -81,12 +85,15 @@
       @include flex-center();
     }
     a .fa{
-      font-size: 28px;
+      font-size: 22px;
     }
   }
   .nav-profile{
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
+  }
+  .small-on-mobile{
+    height: 50px;
   }
 }
 
