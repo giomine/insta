@@ -1,5 +1,7 @@
 # GA Project 3 - Instasham
 
+![insta](./ReadMe/insta.png)
+
 # Contents
 - [Description](#description)
 - [Technology used](#technologies-used)
